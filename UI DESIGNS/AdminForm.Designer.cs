@@ -71,14 +71,14 @@
             // 
             // button15
             // 
-            this.button15.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button15.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button15.FlatAppearance.BorderSize = 0;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button15.Location = new System.Drawing.Point(12, 264);
+            this.button15.Location = new System.Drawing.Point(12, 233);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(165, 23);
+            this.button15.Size = new System.Drawing.Size(170, 23);
             this.button15.TabIndex = 14;
             this.button15.Text = "\tLogout";
             this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -86,7 +86,7 @@
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button12.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,29 +101,30 @@
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button11.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button11.Location = new System.Drawing.Point(12, 185);
+            this.button11.Location = new System.Drawing.Point(12, 175);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(165, 23);
+            this.button11.Size = new System.Drawing.Size(170, 23);
             this.button11.TabIndex = 10;
             this.button11.Text = "Feedback";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button9.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button9.Location = new System.Drawing.Point(12, 225);
+            this.button9.Location = new System.Drawing.Point(12, 204);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(165, 23);
+            this.button9.Size = new System.Drawing.Size(170, 23);
             this.button9.TabIndex = 8;
             this.button9.Text = "Finance Calculator";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,7 +132,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button5.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,7 +147,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button2.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -162,14 +163,14 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(17, 59);
+            this.button1.Location = new System.Drawing.Point(12, 59);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 23);
+            this.button1.Size = new System.Drawing.Size(170, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Dashboard";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
