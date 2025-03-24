@@ -51,10 +51,5 @@ namespace UI_DESIGNS
         {
             LoadForm(new User());
         }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
