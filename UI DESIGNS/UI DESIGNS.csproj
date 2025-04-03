@@ -112,6 +112,9 @@
     <EmbeddedResource Include="registerUser.resx">
       <DependentUpon>registerUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="updateuser.resx">
+      <DependentUpon>updateuser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
