@@ -43,13 +43,15 @@
             // btnAddUser
             // 
             this.btnAddUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddUser.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddUser.Location = new System.Drawing.Point(653, 39);
+            this.btnAddUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddUser.Location = new System.Drawing.Point(816, 39);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(106, 23);
+            this.btnAddUser.Size = new System.Drawing.Size(147, 23);
             this.btnAddUser.TabIndex = 7;
             this.btnAddUser.Text = "Add New User";
-            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.UseVisualStyleBackColor = false;
             this.btnAddUser.Click += new System.EventHandler(this.button2_Click);
             // 
             // tabControl1
@@ -57,10 +59,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(3, 68);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 68);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1067, 467);
+            this.tabControl1.Size = new System.Drawing.Size(1071, 470);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
@@ -70,7 +72,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1059, 441);
+            this.tabPage1.Size = new System.Drawing.Size(1063, 444);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "All Users";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -82,9 +84,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(-4, -45);
+            this.dgvUsers.Location = new System.Drawing.Point(-7, -45);
             this.dgvUsers.Name = "dgvUsers";
-            this.dgvUsers.Size = new System.Drawing.Size(1067, 486);
+            this.dgvUsers.Size = new System.Drawing.Size(1074, 496);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
             // 
@@ -114,7 +116,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.label1.Location = new System.Drawing.Point(5, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 16);
@@ -132,7 +136,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnAddUser);
             this.Name = "User";
-            this.Size = new System.Drawing.Size(1073, 538);
+            this.Size = new System.Drawing.Size(1076, 541);
             this.Load += new System.EventHandler(this.User_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

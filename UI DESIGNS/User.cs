@@ -21,7 +21,10 @@ namespace UI_DESIGNS
 
         private void User_Load(object sender, EventArgs e)
         {
-          
+
+
+            AddButtonsToGrid();
+
             tabControl1.TabPages[0].Text = "All Users";
             tabControl1.TabPages[1].Text = "Active Users";
             tabControl1.TabPages[2].Text = "Inactive Users";
@@ -38,7 +41,6 @@ namespace UI_DESIGNS
 
             dgvUsers.DataSource = dtUsers;
 
-            AddButtonsToGrid();
         }
 
         private int GetTotalUsersCount()

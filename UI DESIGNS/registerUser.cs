@@ -16,5 +16,10 @@ namespace UI_DESIGNS
         {
             InitializeComponent();
         }
+
+        private void registerUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

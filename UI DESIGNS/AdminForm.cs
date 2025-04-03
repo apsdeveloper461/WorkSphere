@@ -21,11 +21,12 @@ namespace UI_DESIGNS
         private void LoadForm(UserControl form)
         {
             panel1.Controls.Clear();
+
             form.Dock = DockStyle.Fill;
             panel1.Controls.Add(form);
         }
 
-        private void ShowDashboard()
+        public void ShowDashboard()
         {
             panel1.Controls.Clear();
             Label lblWelcome = new Label();
@@ -50,6 +51,16 @@ namespace UI_DESIGNS
         private void button2_Click(object sender, EventArgs e)
         {
             LoadForm(new User());
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
