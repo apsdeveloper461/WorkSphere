@@ -35,10 +35,6 @@ namespace UI_DESIGNS
             dtUsers.Columns.Add("Role");
             dtUsers.Columns.Add("Status");
 
-            
-            dtUsers.Rows.Add("1", "Ali", "Ali@gmail.com", "Developer", "Active");
-            dtUsers.Rows.Add("2", "Ahmad", "ahmad@gmail.com", "Manager", "Inactive");
-
             dgvUsers.DataSource = dtUsers;
 
         }
