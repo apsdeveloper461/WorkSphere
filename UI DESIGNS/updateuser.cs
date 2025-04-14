@@ -25,6 +25,10 @@ namespace UI_DESIGNS
             comboBox1.SelectedItem = role;
             comboBox2.SelectedItem = status;
         }
+        private void updateuser_Load(object sender, EventArgs e)
+        {
+            
+        }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -42,6 +46,25 @@ namespace UI_DESIGNS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close(); 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to update this user?",
+                                                  "Confirm Update",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("User updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close(); 
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

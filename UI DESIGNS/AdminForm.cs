@@ -15,7 +15,7 @@ namespace UI_DESIGNS
         public AdminForm()
         {
             InitializeComponent();
-            ShowDashboard(); 
+            ShowDashboard();
         }
 
         private void LoadForm(UserControl form)
@@ -58,9 +58,46 @@ namespace UI_DESIGNS
 
         }
 
+
         private void label1_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LoadForm(new projects());
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            LoadForm(new Receipt());
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Feedback fb = new Feedback();
+            fb.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            LoadForm(new Finance());
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?",
+        "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Form1 loginForm = new Form1();
+                loginForm.Show();
+
+                this.Hide();
+            }
         }
     }
 }

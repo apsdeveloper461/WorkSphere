@@ -46,7 +46,7 @@
             this.btnAddUser.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddUser.Location = new System.Drawing.Point(816, 39);
+            this.btnAddUser.Location = new System.Drawing.Point(824, 39);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(147, 23);
             this.btnAddUser.TabIndex = 7;
@@ -64,6 +64,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1071, 470);
             this.tabControl1.TabIndex = 8;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -84,9 +85,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(-7, -45);
+            this.dgvUsers.Location = new System.Drawing.Point(-7, -22);
             this.dgvUsers.Name = "dgvUsers";
-            this.dgvUsers.Size = new System.Drawing.Size(1074, 496);
+            this.dgvUsers.Size = new System.Drawing.Size(1074, 473);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
             // 
@@ -96,10 +97,11 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1059, 441);
+            this.tabPage2.Size = new System.Drawing.Size(1063, 444);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Active Users";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // tabPage3
             // 
@@ -107,7 +109,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1059, 441);
+            this.tabPage3.Size = new System.Drawing.Size(1063, 444);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Inactive Users";
             this.tabPage3.UseVisualStyleBackColor = true;

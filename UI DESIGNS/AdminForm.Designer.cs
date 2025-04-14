@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelSidebar = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button15 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,16 @@
             this.panelSidebar.Size = new System.Drawing.Size(195, 550);
             this.panelSidebar.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI_DESIGNS.Properties.Resources.worksphere_landscape;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -73,6 +83,7 @@
             this.button15.Text = "\tLogout";
             this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button12
             // 
@@ -88,6 +99,7 @@
             this.button12.Text = "Receipt";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button11
             // 
@@ -103,6 +115,7 @@
             this.button11.Text = "Feedback";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button9
             // 
@@ -118,6 +131,7 @@
             this.button9.Text = "Finance Calculator";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button5
             // 
@@ -133,6 +147,7 @@
             this.button5.Text = " Project";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
             // 
@@ -175,16 +190,6 @@
             this.panel1.Size = new System.Drawing.Size(908, 550);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::UI_DESIGNS.Properties.Resources.worksphere_landscape;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
             // 
             // AdminForm
             // 

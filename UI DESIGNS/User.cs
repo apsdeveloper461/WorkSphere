@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
 
 namespace UI_DESIGNS
 {
@@ -34,15 +37,36 @@ namespace UI_DESIGNS
             dtUsers.Columns.Add("Email");
             dtUsers.Columns.Add("Role");
             dtUsers.Columns.Add("Status");
-
             dgvUsers.DataSource = dtUsers;
-
+            dtUsers.Rows.Add(1, "Ali", "ali@example.com", "Admin", "Active");
+            dtUsers.Rows.Add(2, "Ahmed", "ahmed@example.com", "User", "Inactive");
+            dtUsers.Rows.Add(3, "Sara", "sara@example.com", "Manager", "Active");
+            dtUsers.Rows.Add(4, "Ayesha", "ayesha@example.com", "User", "Inactive");
+            LoadUsers("All");
         }
 
-        private int GetTotalUsersCount()
+        private void LoadUsers(string statusFilter = "All")
         {
-            return dtUsers.Rows.Count;
+
+            AddButtonsToGrid();
+            var users = new List<(int ID, string Name, string Email, string Role, string Status)>
+    {
+        (1, "Ali", "ali@example.com", "Admin", "Active"),
+        (2, "Ahmed", "ahmed@example.com", "User", "Inactive"),
+        (3, "Sara", "sara@example.com", "Manager", "Active"),
+        (4, "Ayesha", "ayesha@example.com", "User", "Inactive")
+    };
+            var filteredUsers = users.Where(user => statusFilter == "All" || user.Status == statusFilter);
+
+            foreach (var user in filteredUsers)
+            {
+                dtUsers.Rows.Add(user.ID, user.Name, user.Email, user.Role, user.Status);
+            }
+
         }
+
+
+
 
         private void AddButtonsToGrid()
         {
@@ -78,9 +102,10 @@ namespace UI_DESIGNS
 
                 if (columnName == "Update")
                 {
-                    updateuser updateForm = new updateuser();
+                    updateuser updateForm = new updateuser(userId.ToString(),name,email,role,status);
                     updateForm.Show();
                     this.Hide();
+
                 }
                 else if (columnName == "Delete")
                 {
@@ -94,13 +119,6 @@ namespace UI_DESIGNS
                 }
             }
         }
-
-
-
-
-
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             Adduser dashboard = new Adduser();
@@ -110,12 +128,12 @@ namespace UI_DESIGNS
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
-
+            LoadUsers("Inactive");
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-
+            LoadUsers("All Users");
         }
 
        
@@ -129,7 +147,18 @@ namespace UI_DESIGNS
 
                 if (columnName == "Update")
                 {
-                    updateuser updateForm = new updateuser();
+                    string name = dgvUsers.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+                    string email = dgvUsers.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                    string role = dgvUsers.Rows[e.RowIndex].Cells["Role"].Value.ToString();
+                    string status = dgvUsers.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+
+                    updateuser updateForm = new updateuser(
+                        userId.ToString(),  
+                        name,
+                        email,
+                        role,
+                        status
+                    );
                     updateForm.ShowDialog();
                 }
                 else if (columnName == "Delete")
@@ -156,9 +185,43 @@ namespace UI_DESIGNS
 
         }
 
+        //private void Users_Load(object sender, EventArgs e)
+        //{
+        //    LoadUsers(); 
+        //}
+
+       
+
+
         private void lblTotalUsers_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab != null)
+            {
+                string selectedTab = tabControl1.SelectedTab.Text;
+
+                if (selectedTab == "All Users")
+                {
+                    LoadUsers("All"); 
+                }
+                else if (selectedTab == "Active Users")
+                {
+                    LoadUsers("Active"); 
+                }
+                else if (selectedTab == "Inactive Users")
+                {
+                    LoadUsers("Inactive"); 
+                }
+            }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            LoadUsers("Active");
         }
     }
 }

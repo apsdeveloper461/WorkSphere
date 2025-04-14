@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace UI_DESIGNS
 {
-    public partial class registerUser : Form
+    public partial class Receipt : UserControl
     {
-        public registerUser()
+        public Receipt()
         {
             InitializeComponent();
-        }
-
-        private void registerUser_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

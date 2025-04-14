@@ -64,5 +64,10 @@ namespace UI_DESIGNS
                             "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
