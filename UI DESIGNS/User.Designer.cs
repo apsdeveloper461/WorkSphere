@@ -33,37 +33,44 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
-            this.activationStatusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.update = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workingStatusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView_for_active = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridView_for_inactive = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.activationStatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.working = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.activationStatus_active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.update_active = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_active = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_active = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email_active = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password_active = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.role_active = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workingStatus_active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ActivationStatus_inactive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.update_inactive = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_inactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_inactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email_inactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password_inactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.role_inactive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workingStatus_inactive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
@@ -95,11 +102,11 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 84);
+            this.tabControl1.Location = new System.Drawing.Point(-2, 148);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1428, 578);
+            this.tabControl1.Size = new System.Drawing.Size(1429, 514);
             this.tabControl1.TabIndex = 8;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -111,7 +118,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1420, 549);
+            this.tabPage1.Size = new System.Drawing.Size(1421, 485);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "All Users";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -125,87 +132,22 @@
             this.dgvUsers.AutoGenerateColumns = false;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.activationStatusDataGridViewCheckBoxColumn,
+            this.activationStatus,
             this.update,
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.roleDataGridViewTextBoxColumn,
-            this.workingStatusDataGridViewCheckBoxColumn});
+            this.id,
+            this.name,
+            this.email,
+            this.password,
+            this.role,
+            this.working});
             this.dgvUsers.DataSource = this.userBindingSource1;
             this.dgvUsers.Location = new System.Drawing.Point(-9, 0);
             this.dgvUsers.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 53;
-            this.dgvUsers.Size = new System.Drawing.Size(1432, 555);
+            this.dgvUsers.Size = new System.Drawing.Size(1433, 491);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
-            // 
-            // activationStatusDataGridViewCheckBoxColumn
-            // 
-            this.activationStatusDataGridViewCheckBoxColumn.DataPropertyName = "ActivationStatus";
-            this.activationStatusDataGridViewCheckBoxColumn.HeaderText = "ActivationStatus";
-            this.activationStatusDataGridViewCheckBoxColumn.MinimumWidth = 7;
-            this.activationStatusDataGridViewCheckBoxColumn.Name = "activationStatusDataGridViewCheckBoxColumn";
-            this.activationStatusDataGridViewCheckBoxColumn.Width = 130;
-            // 
-            // update
-            // 
-            this.update.HeaderText = "Update";
-            this.update.MinimumWidth = 7;
-            this.update.Name = "update";
-            this.update.Text = "update";
-            this.update.UseColumnTextForButtonValue = true;
-            this.update.Width = 130;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 7;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 7;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 7;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 7;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // roleDataGridViewTextBoxColumn
-            // 
-            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
-            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
-            this.roleDataGridViewTextBoxColumn.MinimumWidth = 7;
-            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
-            this.roleDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // workingStatusDataGridViewCheckBoxColumn
-            // 
-            this.workingStatusDataGridViewCheckBoxColumn.DataPropertyName = "WorkingStatus";
-            this.workingStatusDataGridViewCheckBoxColumn.HeaderText = "WorkingStatus";
-            this.workingStatusDataGridViewCheckBoxColumn.MinimumWidth = 7;
-            this.workingStatusDataGridViewCheckBoxColumn.Name = "workingStatusDataGridViewCheckBoxColumn";
-            this.workingStatusDataGridViewCheckBoxColumn.Width = 130;
             // 
             // userBindingSource1
             // 
@@ -219,7 +161,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1420, 549);
+            this.tabPage2.Size = new System.Drawing.Size(1421, 485);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Active Users";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -233,7 +175,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(1420, 549);
+            this.tabPage3.Size = new System.Drawing.Size(1421, 485);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Inactive Users";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -265,86 +207,22 @@
             this.dataGridView_for_active.AutoGenerateColumns = false;
             this.dataGridView_for_active.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_for_active.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewButtonColumn1,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewCheckBoxColumn2});
+            this.activationStatus_active,
+            this.update_active,
+            this.id_active,
+            this.name_active,
+            this.email_active,
+            this.password_active,
+            this.role_active,
+            this.workingStatus_active});
             this.dataGridView_for_active.DataSource = this.userBindingSource1;
             this.dataGridView_for_active.Location = new System.Drawing.Point(-6, -3);
             this.dataGridView_for_active.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView_for_active.Name = "dataGridView_for_active";
             this.dataGridView_for_active.RowHeadersWidth = 53;
-            this.dataGridView_for_active.Size = new System.Drawing.Size(1432, 555);
+            this.dataGridView_for_active.Size = new System.Drawing.Size(1433, 491);
             this.dataGridView_for_active.TabIndex = 1;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "ActivationStatus";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "ActivationStatus";
-            this.dataGridViewCheckBoxColumn1.MinimumWidth = 7;
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Width = 130;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.HeaderText = "Update";
-            this.dataGridViewButtonColumn1.MinimumWidth = 7;
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.Text = "update";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn1.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Password";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Password";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Role";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Role";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 130;
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "WorkingStatus";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "WorkingStatus";
-            this.dataGridViewCheckBoxColumn2.MinimumWidth = 7;
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.Width = 130;
+            this.dataGridView_for_active.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_for_active_CellContentClick);
             // 
             // dataGridView_for_inactive
             // 
@@ -354,86 +232,282 @@
             this.dataGridView_for_inactive.AutoGenerateColumns = false;
             this.dataGridView_for_inactive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_for_inactive.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn3,
-            this.dataGridViewButtonColumn2,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewCheckBoxColumn4});
+            this.ActivationStatus_inactive,
+            this.update_inactive,
+            this.id_inactive,
+            this.name_inactive,
+            this.email_inactive,
+            this.password_inactive,
+            this.role_inactive,
+            this.workingStatus_inactive});
             this.dataGridView_for_inactive.DataSource = this.userBindingSource1;
             this.dataGridView_for_inactive.Location = new System.Drawing.Point(-6, -3);
             this.dataGridView_for_inactive.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView_for_inactive.Name = "dataGridView_for_inactive";
             this.dataGridView_for_inactive.RowHeadersWidth = 53;
-            this.dataGridView_for_inactive.Size = new System.Drawing.Size(1432, 555);
+            this.dataGridView_for_inactive.Size = new System.Drawing.Size(1433, 491);
             this.dataGridView_for_inactive.TabIndex = 1;
+            this.dataGridView_for_inactive.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_for_inactive_CellContentClick);
             // 
-            // dataGridViewCheckBoxColumn3
+            // button1
             // 
-            this.dataGridViewCheckBoxColumn3.DataPropertyName = "ActivationStatus";
-            this.dataGridViewCheckBoxColumn3.HeaderText = "ActivationStatus";
-            this.dataGridViewCheckBoxColumn3.MinimumWidth = 7;
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.Width = 130;
+            this.button1.Location = new System.Drawing.Point(812, 80);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 43);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Add User";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridViewButtonColumn2
+            // comboBox1
             // 
-            this.dataGridViewButtonColumn2.HeaderText = "Update";
-            this.dataGridViewButtonColumn2.MinimumWidth = 7;
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.Text = "update";
-            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn2.Width = 130;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "developer",
+            "product manager"});
+            this.comboBox1.Location = new System.Drawing.Point(546, 96);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(166, 24);
+            this.comboBox1.TabIndex = 15;
             // 
-            // dataGridViewTextBoxColumn6
+            // label3
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 130;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(546, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 16);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "role";
             // 
-            // dataGridViewTextBoxColumn7
+            // label2
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 130;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(340, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 16);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Email";
             // 
-            // dataGridViewTextBoxColumn8
+            // textBox2
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 130;
+            this.textBox2.Location = new System.Drawing.Point(340, 98);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(169, 22);
+            this.textBox2.TabIndex = 12;
             // 
-            // dataGridViewTextBoxColumn9
+            // label4
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Password";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Password";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 130;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(129, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Name";
             // 
-            // dataGridViewTextBoxColumn10
+            // textBox1
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Role";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Role";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 130;
+            this.textBox1.Location = new System.Drawing.Point(129, 98);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(169, 22);
+            this.textBox1.TabIndex = 10;
             // 
-            // dataGridViewCheckBoxColumn4
+            // activationStatus
             // 
-            this.dataGridViewCheckBoxColumn4.DataPropertyName = "WorkingStatus";
-            this.dataGridViewCheckBoxColumn4.HeaderText = "WorkingStatus";
-            this.dataGridViewCheckBoxColumn4.MinimumWidth = 7;
-            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
-            this.dataGridViewCheckBoxColumn4.Width = 130;
+            this.activationStatus.DataPropertyName = "ActivationStatus";
+            this.activationStatus.HeaderText = "ActivationStatus";
+            this.activationStatus.MinimumWidth = 7;
+            this.activationStatus.Name = "activationStatus";
+            this.activationStatus.Width = 130;
+            // 
+            // update
+            // 
+            this.update.HeaderText = "Update";
+            this.update.MinimumWidth = 7;
+            this.update.Name = "update";
+            this.update.Text = "update";
+            this.update.UseColumnTextForButtonValue = true;
+            this.update.Width = 130;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 7;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 130;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Name";
+            this.name.MinimumWidth = 7;
+            this.name.Name = "name";
+            this.name.Width = 130;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 7;
+            this.email.Name = "email";
+            this.email.Width = 130;
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "Password";
+            this.password.HeaderText = "Password";
+            this.password.MinimumWidth = 7;
+            this.password.Name = "password";
+            this.password.Width = 130;
+            // 
+            // role
+            // 
+            this.role.DataPropertyName = "Role";
+            this.role.HeaderText = "Role";
+            this.role.MinimumWidth = 7;
+            this.role.Name = "role";
+            this.role.Width = 130;
+            // 
+            // working
+            // 
+            this.working.DataPropertyName = "WorkingStatus";
+            this.working.HeaderText = "WorkingStatus";
+            this.working.MinimumWidth = 7;
+            this.working.Name = "working";
+            this.working.Width = 130;
+            // 
+            // activationStatus_active
+            // 
+            this.activationStatus_active.DataPropertyName = "ActivationStatus";
+            this.activationStatus_active.HeaderText = "ActivationStatus";
+            this.activationStatus_active.MinimumWidth = 7;
+            this.activationStatus_active.Name = "activationStatus_active";
+            this.activationStatus_active.Width = 130;
+            // 
+            // update_active
+            // 
+            this.update_active.HeaderText = "Update";
+            this.update_active.MinimumWidth = 7;
+            this.update_active.Name = "update_active";
+            this.update_active.Text = "update";
+            this.update_active.UseColumnTextForButtonValue = true;
+            this.update_active.Width = 130;
+            // 
+            // id_active
+            // 
+            this.id_active.DataPropertyName = "Id";
+            this.id_active.HeaderText = "Id";
+            this.id_active.MinimumWidth = 7;
+            this.id_active.Name = "id_active";
+            this.id_active.ReadOnly = true;
+            this.id_active.Width = 130;
+            // 
+            // name_active
+            // 
+            this.name_active.DataPropertyName = "Name";
+            this.name_active.HeaderText = "Name";
+            this.name_active.MinimumWidth = 7;
+            this.name_active.Name = "name_active";
+            this.name_active.Width = 130;
+            // 
+            // email_active
+            // 
+            this.email_active.DataPropertyName = "Email";
+            this.email_active.HeaderText = "Email";
+            this.email_active.MinimumWidth = 7;
+            this.email_active.Name = "email_active";
+            this.email_active.Width = 130;
+            // 
+            // password_active
+            // 
+            this.password_active.DataPropertyName = "Password";
+            this.password_active.HeaderText = "Password";
+            this.password_active.MinimumWidth = 7;
+            this.password_active.Name = "password_active";
+            this.password_active.Width = 130;
+            // 
+            // role_active
+            // 
+            this.role_active.DataPropertyName = "Role";
+            this.role_active.HeaderText = "Role";
+            this.role_active.MinimumWidth = 7;
+            this.role_active.Name = "role_active";
+            this.role_active.Width = 130;
+            // 
+            // workingStatus_active
+            // 
+            this.workingStatus_active.DataPropertyName = "WorkingStatus";
+            this.workingStatus_active.HeaderText = "WorkingStatus";
+            this.workingStatus_active.MinimumWidth = 7;
+            this.workingStatus_active.Name = "workingStatus_active";
+            this.workingStatus_active.Width = 130;
+            // 
+            // ActivationStatus_inactive
+            // 
+            this.ActivationStatus_inactive.DataPropertyName = "ActivationStatus";
+            this.ActivationStatus_inactive.HeaderText = "ActivationStatus";
+            this.ActivationStatus_inactive.MinimumWidth = 7;
+            this.ActivationStatus_inactive.Name = "ActivationStatus_inactive";
+            this.ActivationStatus_inactive.Width = 130;
+            // 
+            // update_inactive
+            // 
+            this.update_inactive.HeaderText = "Update";
+            this.update_inactive.MinimumWidth = 7;
+            this.update_inactive.Name = "update_inactive";
+            this.update_inactive.Text = "update";
+            this.update_inactive.UseColumnTextForButtonValue = true;
+            this.update_inactive.Width = 130;
+            // 
+            // id_inactive
+            // 
+            this.id_inactive.DataPropertyName = "Id";
+            this.id_inactive.HeaderText = "Id";
+            this.id_inactive.MinimumWidth = 7;
+            this.id_inactive.Name = "id_inactive";
+            this.id_inactive.ReadOnly = true;
+            this.id_inactive.Width = 130;
+            // 
+            // name_inactive
+            // 
+            this.name_inactive.DataPropertyName = "Name";
+            this.name_inactive.HeaderText = "Name";
+            this.name_inactive.MinimumWidth = 7;
+            this.name_inactive.Name = "name_inactive";
+            this.name_inactive.Width = 130;
+            // 
+            // email_inactive
+            // 
+            this.email_inactive.DataPropertyName = "Email";
+            this.email_inactive.HeaderText = "Email";
+            this.email_inactive.MinimumWidth = 7;
+            this.email_inactive.Name = "email_inactive";
+            this.email_inactive.Width = 130;
+            // 
+            // password_inactive
+            // 
+            this.password_inactive.DataPropertyName = "Password";
+            this.password_inactive.HeaderText = "Password";
+            this.password_inactive.MinimumWidth = 7;
+            this.password_inactive.Name = "password_inactive";
+            this.password_inactive.Width = 130;
+            // 
+            // role_inactive
+            // 
+            this.role_inactive.DataPropertyName = "Role";
+            this.role_inactive.HeaderText = "Role";
+            this.role_inactive.MinimumWidth = 7;
+            this.role_inactive.Name = "role_inactive";
+            this.role_inactive.Width = 130;
+            // 
+            // workingStatus_inactive
+            // 
+            this.workingStatus_inactive.DataPropertyName = "WorkingStatus";
+            this.workingStatus_inactive.HeaderText = "WorkingStatus";
+            this.workingStatus_inactive.MinimumWidth = 7;
+            this.workingStatus_inactive.Name = "workingStatus_inactive";
+            this.workingStatus_inactive.Width = 130;
             // 
             // User
             // 
@@ -441,6 +515,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnAddUser);
@@ -471,32 +552,39 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.BindingSource userBindingSource;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn activationStatusDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn update;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn workingStatusDataGridViewCheckBoxColumn;
         private System.Windows.Forms.BindingSource userBindingSource1;
         private System.Windows.Forms.DataGridView dataGridView_for_active;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridView dataGridView_for_inactive;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn activationStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn update;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn role;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn working;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn activationStatus_active;
+        private System.Windows.Forms.DataGridViewButtonColumn update_active;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_active;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_active;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email_active;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password_active;
+        private System.Windows.Forms.DataGridViewTextBoxColumn role_active;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn workingStatus_active;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ActivationStatus_inactive;
+        private System.Windows.Forms.DataGridViewButtonColumn update_inactive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_inactive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_inactive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email_inactive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password_inactive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn role_inactive;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn workingStatus_inactive;
     }
 }
