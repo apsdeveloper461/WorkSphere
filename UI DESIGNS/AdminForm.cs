@@ -52,7 +52,7 @@ namespace UI_DESIGNS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            LoadForm(new User());
+            LoadForm(new User(adminData));
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

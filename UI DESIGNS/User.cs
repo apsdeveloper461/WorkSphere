@@ -15,109 +15,95 @@ namespace UI_DESIGNS
 {
     public partial class User : UserControl
     {
-        public User()
+        private ServiceReference1.User adminData;
+        public User(ServiceReference1.User admin)
         {
             InitializeComponent();
+            this.adminData = admin;
         }
-   
-        DataTable dtUsers = new DataTable();
+        public List<ServiceReference1.User> usersData=new List<ServiceReference1.User>();
+        private void LoadUsers()
+        {
+            if (adminData == null)
+            {
+                MessageBox.Show("Admin data is null");
+                return;
+            }
+            else
+            {
+                ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                ServiceReference1.User[] users = client.displayUsers(adminData);
+                if (users != null)
+                {
+                    usersData= users.ToList();
+                }
+                else
+                {
+                    MessageBox.Show("No users found");
+                }
+
+            }
+        }
+        private void LoadedUsersInToDataSet(string s)
+        {
+            List<ServiceReference1.User> users = new List<ServiceReference1.User>();
+            for (int i = 0; i < usersData.Count; i++)
+            {
+                if (s.ToLower() == "all")
+                {
+                    users.Add(usersData[i]);
+                }
+                else if (s.ToLower() == "active")
+                {
+                    if (usersData[i].ActivationStatus == true)
+                    {
+                        users.Add(usersData[i]);
+                    }
+                }
+                else if (s.ToLower() == "inactive")
+                {
+                    if (usersData[i].ActivationStatus == false)
+                    {
+                        users.Add(usersData[i]);
+                    }
+                }
+            }
+            if (users.Count > 0)
+            {
+                if(s.ToLower()=="all")
+                    dgvUsers.DataSource = users;
+                else if(s.ToLower() == "active")
+                    dataGridView_for_active.DataSource = users;
+                else if (s.ToLower() == "inactive")
+                    dataGridView_for_inactive.DataSource = users;
+                //"Total Users: " + users.Count.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No users found");
+            }
+        }
+
 
         private void User_Load(object sender, EventArgs e)
         {
+            LoadUsers();
+            LoadedUsersInToDataSet("all");
 
-
-            AddButtonsToGrid();
-
-            tabControl1.TabPages[0].Text = "All Users";
-            tabControl1.TabPages[1].Text = "Active Users";
-            tabControl1.TabPages[2].Text = "Inactive Users";
-
-            dtUsers.Columns.Add("ID");
-            dtUsers.Columns.Add("Name");
-            dtUsers.Columns.Add("Email");
-            dtUsers.Columns.Add("Role");
-            dtUsers.Columns.Add("Status");
-            dgvUsers.DataSource = dtUsers;
-            dtUsers.Rows.Add(1, "Ali", "ali@example.com", "Admin", "Active");
-            dtUsers.Rows.Add(2, "Ahmed", "ahmed@example.com", "User", "Inactive");
-            dtUsers.Rows.Add(3, "Sara", "sara@example.com", "Manager", "Active");
-            dtUsers.Rows.Add(4, "Ayesha", "ayesha@example.com", "User", "Inactive");
-            LoadUsers("All");
-        }
-
-        private void LoadUsers(string statusFilter = "All")
-        {
-
-            AddButtonsToGrid();
-            var users = new List<(int ID, string Name, string Email, string Role, string Status)>
-    {
-        (1, "Ali", "ali@example.com", "Admin", "Active"),
-        (2, "Ahmed", "ahmed@example.com", "User", "Inactive"),
-        (3, "Sara", "sara@example.com", "Manager", "Active"),
-        (4, "Ayesha", "ayesha@example.com", "User", "Inactive")
-    };
-            var filteredUsers = users.Where(user => statusFilter == "All" || user.Status == statusFilter);
-
-            foreach (var user in filteredUsers)
-            {
-                dtUsers.Rows.Add(user.ID, user.Name, user.Email, user.Role, user.Status);
-            }
 
         }
 
+        
 
 
 
-        private void AddButtonsToGrid()
-        {
-            if (dgvUsers.Columns["Update"] == null && dgvUsers.Columns["Delete"] == null)
-            {
-                DataGridViewButtonColumn btnUpdate = new DataGridViewButtonColumn();
-                btnUpdate.Name = "Update";
-                btnUpdate.HeaderText = "Update";
-                btnUpdate.Text = "Update";
-                btnUpdate.UseColumnTextForButtonValue = true;
-                dgvUsers.Columns.Add(btnUpdate);
 
-                DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
-                btnDelete.Name = "Delete";
-                btnDelete.HeaderText = "Delete";
-                btnDelete.Text = "Delete";
-                btnDelete.UseColumnTextForButtonValue = true;
-                dgvUsers.Columns.Add(btnDelete);
-            }
-        }
+     
 
 
         private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
-            {
-                string columnName = dgvUsers.Columns[e.ColumnIndex].Name;
-                int userId = Convert.ToInt32(dgvUsers.Rows[e.RowIndex].Cells["ID"].Value);
-                string name = dgvUsers.Rows[e.RowIndex].Cells["Name"].Value.ToString();
-                string email = dgvUsers.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                string role = dgvUsers.Rows[e.RowIndex].Cells["Role"].Value.ToString();
-                string status = dgvUsers.Rows[e.RowIndex].Cells["Status"].Value.ToString();
-
-                if (columnName == "Update")
-                {
-                    updateuser updateForm = new updateuser(userId.ToString(),name,email,role,status);
-                    updateForm.Show();
-                    this.Hide();
-
-                }
-                else if (columnName == "Delete")
-                {
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete this user?",
-                                                          "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (result == DialogResult.Yes)
-                    {
-                        dgvUsers.Rows.RemoveAt(e.RowIndex);
-                        MessageBox.Show("User deleted successfully.");
-                    }
-                }
-            }
+            
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -128,49 +114,19 @@ namespace UI_DESIGNS
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
-            LoadUsers("Inactive");
+            LoadedUsersInToDataSet("Inactive");
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            LoadUsers("All Users");
+            LoadedUsersInToDataSet("all");
         }
 
        
 
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                string columnName = dgvUsers.Columns[e.ColumnIndex].Name;
-                int userId = Convert.ToInt32(dgvUsers.Rows[e.RowIndex].Cells["ID"].Value); 
-
-                if (columnName == "Update")
-                {
-                    string name = dgvUsers.Rows[e.RowIndex].Cells["Name"].Value.ToString();
-                    string email = dgvUsers.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                    string role = dgvUsers.Rows[e.RowIndex].Cells["Role"].Value.ToString();
-                    string status = dgvUsers.Rows[e.RowIndex].Cells["Status"].Value.ToString();
-
-                    updateuser updateForm = new updateuser(
-                        userId.ToString(),  
-                        name,
-                        email,
-                        role,
-                        status
-                    );
-                    updateForm.ShowDialog();
-                }
-                else if (columnName == "Delete")
-                {
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete this user?",
-                                                          "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (result == DialogResult.Yes)
-                    {
-                        DeleteUser(userId);
-                    }
-                }
-            }
+           
 
         }
 
@@ -206,22 +162,22 @@ namespace UI_DESIGNS
 
                 if (selectedTab == "All Users")
                 {
-                    LoadUsers("All"); 
+                    LoadedUsersInToDataSet("All");
                 }
                 else if (selectedTab == "Active Users")
                 {
-                    LoadUsers("Active"); 
+                    LoadedUsersInToDataSet("Active"); 
                 }
                 else if (selectedTab == "Inactive Users")
                 {
-                    LoadUsers("Inactive"); 
+                    LoadedUsersInToDataSet("Inactive"); 
                 }
             }
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-            LoadUsers("Active");
+            LoadedUsersInToDataSet("Active");
         }
     }
 }
