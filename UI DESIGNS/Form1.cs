@@ -30,19 +30,45 @@ namespace UI_DESIGNS
         private void button1_Click(object sender, EventArgs e)
         {
             string email = textBox3.Text.Trim();
-            string password = textBox1.Text.Trim();
-
-            // Check agar koi field khali ho
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            string password = textBox1.Text;
+            //MessageBox.Show(email + password);  
+            if(email.Contains("@") && email.Contains(".com") && password.Length>4)
             {
-                MessageBox.Show("Please enter both Email and Password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Function exit kar do
-            }
+          
+            ServiceReference1.Service1Client service = new ServiceReference1.Service1Client();
+            ServiceReference1.User result = service.login(email,password);
+                if (result != null)
+                {
+                    if (result.Role.ToLower() == "admin")
+                    {
+                        AdminForm adminDasboard = new AdminForm(result);
+                        adminDasboard.Show();
+                    }
+                    //else if (result.Role.ToLower() == "product manager" && result.ActivationStatus == true)
+                    //{
+                    //    ProductManagerDashbaord productManagerDashbaord = new ProductManagerDashbaord(result);
+                    //    productManagerDashbaord.Show();
+                    //}
+                    //else if (result.Role.ToLower() == "developer" && result.ActivationStatus == true)
+                    //{
+                    //    DeveloperDashboard developerDashboard = new DeveloperDashboard(result);
+                    //    developerDashboard.Show();
+                    //}
+                    else
+                    {
+                        MessageBox.Show("Wrong Credentials. Please try again to login WorkSphere", "Invalid Data", MessageBoxButtons.OK,MessageBoxIcon.Error);
 
-            // Sab kuch theek hai toh dusra form open karo
-            AdminForm dashboard = new AdminForm(); // New Form ka object
-            dashboard.Show(); // Dusra form dikhana
-            this.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show( "Wrong Credentials. Please try again to login WorkSphere", "Something went wrong", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("1. Email must be contains @ and .com.\n2. Password contains atleast 5 characters.", "Invalid Entered Data", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

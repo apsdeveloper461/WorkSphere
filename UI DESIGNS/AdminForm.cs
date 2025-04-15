@@ -12,10 +12,12 @@ namespace UI_DESIGNS
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+        private ServiceReference1.User adminData;
+        public AdminForm(ServiceReference1.User adminData)
         {
             InitializeComponent();
             ShowDashboard();
+            this.adminData = adminData;
         }
 
         private void LoadForm(UserControl form)
