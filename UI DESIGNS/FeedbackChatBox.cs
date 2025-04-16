@@ -97,11 +97,12 @@ namespace UI_DESIGNS
         {
             if (activeProject == null)
             {
+                MessageBox.Show("Please select a project to send feedback.", "No Project Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (SendingMessage_txtbx.Text.Length > 0)
             {
-                MessageBox.Show(activeProject.Id + SendingMessage_txtbx.Text + userData.Id);
+                //MessageBox.Show(activeProject.Id + SendingMessage_txtbx.Text + userData.Id);
                 ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
                 string res=client.addNewFeedback(userData, activeProject.Id, SendingMessage_txtbx.Text);
                 if (res.ToLower() != "yes")
