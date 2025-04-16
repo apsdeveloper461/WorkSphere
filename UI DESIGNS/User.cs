@@ -212,10 +212,10 @@ namespace UI_DESIGNS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(textBox1.Text + textBox2.Text + comboBox1.Text);
+            //MessageBox.Show(textBox1.Text + textBox2.Text + comboBox1.Text);
             if (textBox1.Text.Trim().Length > 5 && textBox2.Text.Contains("@") && textBox2.Text.Contains(".com") && comboBox1.Text != "")
             {
-                MessageBox.Show(adminData.Role);
+                //MessageBox.Show(adminData.Role);
                 ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
                 string res = client.addNewUser(adminData, comboBox1.Text.ToLower(), textBox1.Text, textBox2.Text, "password", true);
                 MessageBox.Show(res);
@@ -236,6 +236,11 @@ namespace UI_DESIGNS
                     {
                         LoadedUsersInToDataSet("Inactive");
                     }
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    comboBox1.SelectedIndex = -1;
+                    comboBox1.Text = "";
+
                 }
 
             }

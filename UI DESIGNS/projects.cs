@@ -149,7 +149,7 @@ namespace UI_DESIGNS
             if (e.ColumnIndex == dataGridView_for_active.Columns["viewUsers_active"].Index)
             {
                 int projectId = Convert.ToInt32(dataGridView_for_active.Rows[e.RowIndex].Cells["id_active"].Value);
-                MessageBox.Show(projectId.ToString());
+                //MessageBox.Show(projectId.ToString());
                 ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
                 List<ServiceReference1.User> users = new List<ServiceReference1.User>();
                 // Get the users assigned to the project
@@ -172,7 +172,7 @@ namespace UI_DESIGNS
             if (e.ColumnIndex == dataGridView_for_all.Columns["viewUsers"].Index)
             {
                 int projectId = Convert.ToInt32(dataGridView_for_all.Rows[e.RowIndex].Cells["id"].Value);
-                MessageBox.Show(projectId.ToString());
+                //MessageBox.Show(projectId.ToString());
                 ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
                 List<ServiceReference1.User> users = new List<ServiceReference1.User>();
                 // Get the users assigned to the project
@@ -195,7 +195,7 @@ namespace UI_DESIGNS
             if (e.ColumnIndex == dataGridView_for_complete.Columns["viewUsers_complete"].Index)
             {
                 int projectId = Convert.ToInt32(dataGridView_for_complete.Rows[e.RowIndex].Cells["id_complete"].Value);
-                MessageBox.Show(projectId.ToString());
+                //MessageBox.Show(projectId.ToString());
                 ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
                 List<ServiceReference1.User> users = new List<ServiceReference1.User>();
                 // Get the users assigned to the project
@@ -210,6 +210,49 @@ namespace UI_DESIGNS
                 }
 
                 dataGridView_for_users.DataSource = users;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Trim().Length > 5 && richTextBox1.Text.Length > 10)
+            {
+                List<string> selectedUsers = new List<string>();
+                if (listBox1.SelectedItem != null)
+                {
+                    //MessageBox.Show(listBox1.SelectedItem.ToString());
+                    selectedUsers.Add(listBox1.SelectedItem.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Please select a product manager from the list.","Selection Limitation",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return;
+                }
+                if (checkedListBox1.CheckedItems.Count == 0)
+                {
+                    MessageBox.Show("Please select at least one developer from the list.","Selection Limitation",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return;
+                }
+
+                for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
+                {
+                    selectedUsers.Add(checkedListBox1.CheckedItems[i].ToString());
+
+                }
+                ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                string res = client.addNewProject(adminData, textBox1.Text, richTextBox1.Text, selectedUsers.ToArray());
+                MessageBox.Show(res);
+                LoadUsers();
+                LoadProjects();
+                LoadedIntoDataSetProjects("all");
+                LoadedIntoDataSetProjects("active");
+                textBox1.Clear();
+                richTextBox1.Clear();
+
+            }
+            else
+            {
+                MessageBox.Show("1. Name must be greater than 5 characters.\n2. Description must be greater than 10 characters.", "Please fill all the fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

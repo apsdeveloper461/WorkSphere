@@ -279,6 +279,7 @@
             this.button1.TabIndex = 27;
             this.button1.Text = "Add Project";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label3
             // 
