@@ -79,8 +79,8 @@ namespace UI_DESIGNS
                     }
                 }
             }
-            if (projects.Count > 0)
-            {
+            //if (projects.Count > 0)
+            //{
                 if (s.ToLower() == "all")
                 {
                     dataGridView_for_all.DataSource = projects;
@@ -93,7 +93,11 @@ namespace UI_DESIGNS
                 {
                     dataGridView_for_complete.DataSource = projects;
                 }
-            }
+            //}
+            //else
+            //{
+
+            //}
             //else
             //{
             //    MessageBox.Show("No projects found");
