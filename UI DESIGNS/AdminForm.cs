@@ -78,9 +78,7 @@ namespace UI_DESIGNS
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Feedback fb = new Feedback();
-            fb.Show();
-            this.Hide();
+                LoadForm(new FeedbackChatBox(adminData));
         }
 
         private void button9_Click(object sender, EventArgs e)
