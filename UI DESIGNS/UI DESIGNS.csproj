@@ -143,6 +143,7 @@
     <Compile Include="Receipt.Designer.cs">
       <DependentUpon>Receipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimeLogDisplay.cs" />
     <Compile Include="updateProject.cs">
       <SubType>Form</SubType>
     </Compile>

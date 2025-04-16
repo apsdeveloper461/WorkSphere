@@ -18,6 +18,54 @@ namespace UI_DESIGNS
             InitializeComponent();
             this.developer = developer;
         }
+
+        private void LoadedTimeLog(string s)
+        {
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+            ServiceReference1.TimeLog[] timeLogs = client.getTimeLogsByUserId(developer);
+            if (s.ToLower() == "all")
+            {
+                timeLogs = timeLogs.ToArray();
+            }
+            else if (s.ToLower() == "pending")
+            {
+                timeLogs = timeLogs.Where(t => t.Status.ToLower() == "pending").ToArray();
+            }
+            else if (s.ToLower() == "approved")
+            {
+                timeLogs = timeLogs.Where(t => t.Status.ToLower() == "approved").ToArray();
+            }
+            else if (s.ToLower() == "reject")
+            {
+                timeLogs = timeLogs.Where(t => t.Status.ToLower() == "rejected").ToArray();
+            }
+
+            var timeLogDisplayList = timeLogs.Select(t => new TimeLogDisplay
+            {
+                status = t.Status,
+                ProjectName = t.Project.Title,
+                DeveloperEmail = t.Developer.Email,
+                Hours = t.WorkedHours,
+                Description = t.Description,
+                Date = t.Date
+            }).ToList();
+            if(s.StartsWith("all"))
+            {
+                dataGridView1.DataSource = timeLogDisplayList;
+            }
+            else if (s.StartsWith("pending"))
+            {
+                dataGridView2.DataSource = timeLogDisplayList;
+            }
+            else if (s.StartsWith("approved"))
+            {
+                dataGridView3.DataSource = timeLogDisplayList;
+            }
+            else if (s.StartsWith("reject"))
+            {
+                dataGridView4.DataSource = timeLogDisplayList;
+            }
+        }
         
         private void AddTimeLog_Load(object sender, EventArgs e)
         {
@@ -27,9 +75,11 @@ namespace UI_DESIGNS
             {
                 foreach (ServiceReference1.Project project in projects)
                 {
-                    comboBox1.Items.Add(project.Title);
+                    comboBox1.Items.Add("("+project.Id+")"+project.Title);
+                    
                 }
             }
+            LoadedTimeLog("all");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,14 +115,55 @@ namespace UI_DESIGNS
                 MessageBox.Show("Hours cannot be greater than 8.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            DateTime selectedDate = date_picker.Value;
             // If all fields are valid, proceed with the desired action
             string selectedProject = comboBox1.SelectedItem.ToString();
-            string description = description_txtbx.Text;
+            // Convert the project ID to an integer
+            selectedProject = selectedProject.Substring(1, selectedProject.IndexOf(')') - 1); // Extract the project ID from the selected item
+            if (!int.TryParse(selectedProject, out int projectId))
+            {
 
+                MessageBox.Show("Invalid project ID.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string description = description_txtbx.Text;
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+            string result= client.addTimeLog(developer, projectId,description, hours, "pending",selectedDate);
+            MessageBox.Show(result, "Time Log Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadedTimeLog("all");
+            LoadedTimeLog("pending");
             // Example action: Display a message box with the entered information
-            MessageBox.Show($"Project: {selectedProject}\nTime Spent: {hours}\nDescription: {description}", "Time Log Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Project: {selectedProject}\nTime Spent: {hours}\nDescription: {selectedDate}", "Time Log Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // You can replace the above message box with the actual logic to save the time log
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            LoadedTimeLog("all");
+        }
+
+        private void tabControl2_Click(object sender, EventArgs e)
+        {
+            LoadedTimeLog("all");
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            LoadedTimeLog("pending");
+        }
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+            LoadedTimeLog("approved");
+        }
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+            LoadedTimeLog("reject");
         }
 
     }
