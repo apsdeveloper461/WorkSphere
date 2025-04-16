@@ -58,34 +58,31 @@
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.update = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.viewUsers = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.feedback = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView_for_active = new System.Windows.Forms.DataGridView();
-            this.update_active = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.viewUsers_active = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.feedback_active = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.id_active = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.update_complete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.viewUsers_complete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.chatbox_complete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.id_complete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.update_active = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.viewUsers_active = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.id_active = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.viewUsers = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_all)).BeginInit();
@@ -130,7 +127,6 @@
             this.dataGridView_for_all.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.update,
             this.viewUsers,
-            this.feedback,
             this.status,
             this.id,
             this.title,
@@ -169,7 +165,6 @@
             this.dataGridView_for_complete.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.update_complete,
             this.viewUsers_complete,
-            this.chatbox_complete,
             this.dataGridViewCheckBoxColumn2,
             this.id_complete,
             this.dataGridViewTextBoxColumn7,
@@ -394,84 +389,6 @@
             this.tabPage2.Text = "Selected Projects";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // update
-            // 
-            this.update.HeaderText = "Update";
-            this.update.MinimumWidth = 7;
-            this.update.Name = "update";
-            this.update.Text = "update";
-            this.update.UseColumnTextForButtonValue = true;
-            this.update.Width = 130;
-            // 
-            // viewUsers
-            // 
-            this.viewUsers.HeaderText = "Assigned To";
-            this.viewUsers.MinimumWidth = 7;
-            this.viewUsers.Name = "viewUsers";
-            this.viewUsers.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewUsers.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.viewUsers.Text = "View Users";
-            this.viewUsers.UseColumnTextForButtonValue = true;
-            this.viewUsers.Width = 130;
-            // 
-            // feedback
-            // 
-            this.feedback.HeaderText = "ChatBox";
-            this.feedback.MinimumWidth = 7;
-            this.feedback.Name = "feedback";
-            this.feedback.Text = "View Feedback";
-            this.feedback.UseColumnTextForButtonValue = true;
-            this.feedback.Width = 130;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "Status";
-            this.status.HeaderText = "Status";
-            this.status.MinimumWidth = 7;
-            this.status.Name = "status";
-            this.status.Width = 130;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Id";
-            this.id.MinimumWidth = 7;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 130;
-            // 
-            // title
-            // 
-            this.title.DataPropertyName = "Title";
-            this.title.HeaderText = "Title";
-            this.title.MinimumWidth = 7;
-            this.title.Name = "title";
-            this.title.Width = 130;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "Description";
-            this.description.HeaderText = "Description";
-            this.description.MinimumWidth = 7;
-            this.description.Name = "description";
-            this.description.Width = 130;
-            // 
-            // startDate
-            // 
-            this.startDate.DataPropertyName = "StartDate";
-            this.startDate.HeaderText = "StartDate";
-            this.startDate.MinimumWidth = 7;
-            this.startDate.Name = "startDate";
-            this.startDate.Width = 130;
-            // 
-            // endDate
-            // 
-            this.endDate.DataPropertyName = "EndDate";
-            this.endDate.HeaderText = "EndDate";
-            this.endDate.MinimumWidth = 7;
-            this.endDate.Name = "endDate";
-            this.endDate.Width = 130;
-            // 
             // dataGridView_for_active
             // 
             this.dataGridView_for_active.AutoGenerateColumns = false;
@@ -479,7 +396,6 @@
             this.dataGridView_for_active.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.update_active,
             this.viewUsers_active,
-            this.feedback_active,
             this.dataGridViewCheckBoxColumn3,
             this.id_active,
             this.dataGridViewTextBoxColumn12,
@@ -494,82 +410,6 @@
             this.dataGridView_for_active.Size = new System.Drawing.Size(884, 443);
             this.dataGridView_for_active.TabIndex = 2;
             this.dataGridView_for_active.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_for_active_CellContentClick);
-            // 
-            // update_active
-            // 
-            this.update_active.HeaderText = "Update";
-            this.update_active.MinimumWidth = 7;
-            this.update_active.Name = "update_active";
-            this.update_active.Text = "update";
-            this.update_active.UseColumnTextForButtonValue = true;
-            this.update_active.Width = 130;
-            // 
-            // viewUsers_active
-            // 
-            this.viewUsers_active.HeaderText = "Assigned To";
-            this.viewUsers_active.MinimumWidth = 7;
-            this.viewUsers_active.Name = "viewUsers_active";
-            this.viewUsers_active.Text = "View Users";
-            this.viewUsers_active.UseColumnTextForButtonValue = true;
-            this.viewUsers_active.Width = 130;
-            // 
-            // feedback_active
-            // 
-            this.feedback_active.HeaderText = "ChatBox";
-            this.feedback_active.MinimumWidth = 7;
-            this.feedback_active.Name = "feedback_active";
-            this.feedback_active.Text = "View Feedback";
-            this.feedback_active.UseColumnTextForButtonValue = true;
-            this.feedback_active.Width = 130;
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.DataPropertyName = "Status";
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Status";
-            this.dataGridViewCheckBoxColumn3.MinimumWidth = 7;
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.Width = 130;
-            // 
-            // id_active
-            // 
-            this.id_active.DataPropertyName = "Id";
-            this.id_active.HeaderText = "Id";
-            this.id_active.MinimumWidth = 7;
-            this.id_active.Name = "id_active";
-            this.id_active.ReadOnly = true;
-            this.id_active.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Title";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "StartDate";
-            this.dataGridViewTextBoxColumn14.HeaderText = "StartDate";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "EndDate";
-            this.dataGridViewTextBoxColumn15.HeaderText = "EndDate";
-            this.dataGridViewTextBoxColumn15.MinimumWidth = 7;
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Width = 130;
             // 
             // update_complete
             // 
@@ -589,21 +429,13 @@
             this.viewUsers_complete.UseColumnTextForButtonValue = true;
             this.viewUsers_complete.Width = 130;
             // 
-            // chatbox_complete
-            // 
-            this.chatbox_complete.HeaderText = "ChatBox";
-            this.chatbox_complete.MinimumWidth = 7;
-            this.chatbox_complete.Name = "chatbox_complete";
-            this.chatbox_complete.Text = "View Feedback";
-            this.chatbox_complete.UseColumnTextForButtonValue = true;
-            this.chatbox_complete.Width = 130;
-            // 
             // dataGridViewCheckBoxColumn2
             // 
             this.dataGridViewCheckBoxColumn2.DataPropertyName = "Status";
             this.dataGridViewCheckBoxColumn2.HeaderText = "Status";
             this.dataGridViewCheckBoxColumn2.MinimumWidth = 7;
             this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
             this.dataGridViewCheckBoxColumn2.Width = 130;
             // 
             // id_complete
@@ -637,6 +469,7 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "StartDate";
             this.dataGridViewTextBoxColumn9.MinimumWidth = 7;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Width = 130;
             // 
             // dataGridViewTextBoxColumn10
@@ -645,7 +478,150 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "EndDate";
             this.dataGridViewTextBoxColumn10.MinimumWidth = 7;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Width = 130;
+            // 
+            // update_active
+            // 
+            this.update_active.HeaderText = "Update";
+            this.update_active.MinimumWidth = 7;
+            this.update_active.Name = "update_active";
+            this.update_active.Text = "update";
+            this.update_active.UseColumnTextForButtonValue = true;
+            this.update_active.Width = 130;
+            // 
+            // viewUsers_active
+            // 
+            this.viewUsers_active.HeaderText = "Assigned To";
+            this.viewUsers_active.MinimumWidth = 7;
+            this.viewUsers_active.Name = "viewUsers_active";
+            this.viewUsers_active.Text = "View Users";
+            this.viewUsers_active.UseColumnTextForButtonValue = true;
+            this.viewUsers_active.Width = 130;
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.DataPropertyName = "Status";
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Status";
+            this.dataGridViewCheckBoxColumn3.MinimumWidth = 7;
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn3.Width = 130;
+            // 
+            // id_active
+            // 
+            this.id_active.DataPropertyName = "Id";
+            this.id_active.HeaderText = "Id";
+            this.id_active.MinimumWidth = 7;
+            this.id_active.Name = "id_active";
+            this.id_active.ReadOnly = true;
+            this.id_active.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Title";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 7;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 7;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "StartDate";
+            this.dataGridViewTextBoxColumn14.HeaderText = "StartDate";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 7;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "EndDate";
+            this.dataGridViewTextBoxColumn15.HeaderText = "EndDate";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 7;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Width = 130;
+            // 
+            // update
+            // 
+            this.update.HeaderText = "Update";
+            this.update.MinimumWidth = 7;
+            this.update.Name = "update";
+            this.update.Text = "update";
+            this.update.UseColumnTextForButtonValue = true;
+            this.update.Width = 130;
+            // 
+            // viewUsers
+            // 
+            this.viewUsers.HeaderText = "Assigned To";
+            this.viewUsers.MinimumWidth = 7;
+            this.viewUsers.Name = "viewUsers";
+            this.viewUsers.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewUsers.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.viewUsers.Text = "View Users";
+            this.viewUsers.UseColumnTextForButtonValue = true;
+            this.viewUsers.Width = 130;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Status";
+            this.status.MinimumWidth = 7;
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 130;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 7;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 130;
+            // 
+            // title
+            // 
+            this.title.DataPropertyName = "Title";
+            this.title.HeaderText = "Title";
+            this.title.MinimumWidth = 7;
+            this.title.Name = "title";
+            this.title.Width = 130;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "Description";
+            this.description.HeaderText = "Description";
+            this.description.MinimumWidth = 7;
+            this.description.Name = "description";
+            this.description.Width = 130;
+            // 
+            // startDate
+            // 
+            this.startDate.DataPropertyName = "StartDate";
+            this.startDate.HeaderText = "StartDate";
+            this.startDate.MinimumWidth = 7;
+            this.startDate.Name = "startDate";
+            this.startDate.ReadOnly = true;
+            this.startDate.Width = 130;
+            // 
+            // endDate
+            // 
+            this.endDate.DataPropertyName = "EndDate";
+            this.endDate.HeaderText = "EndDate";
+            this.endDate.MinimumWidth = 7;
+            this.endDate.Name = "endDate";
+            this.endDate.ReadOnly = true;
+            this.endDate.Width = 130;
             // 
             // projects
             // 
@@ -713,19 +689,17 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridView dataGridView_for_active;
         private System.Windows.Forms.DataGridViewButtonColumn update;
         private System.Windows.Forms.DataGridViewButtonColumn viewUsers;
-        private System.Windows.Forms.DataGridViewButtonColumn feedback;
         private System.Windows.Forms.DataGridViewCheckBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDate;
-        private System.Windows.Forms.DataGridView dataGridView_for_active;
         private System.Windows.Forms.DataGridViewButtonColumn update_active;
         private System.Windows.Forms.DataGridViewButtonColumn viewUsers_active;
-        private System.Windows.Forms.DataGridViewButtonColumn feedback_active;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_active;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
@@ -734,7 +708,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewButtonColumn update_complete;
         private System.Windows.Forms.DataGridViewButtonColumn viewUsers_complete;
-        private System.Windows.Forms.DataGridViewButtonColumn chatbox_complete;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_complete;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
