@@ -50,6 +50,12 @@
   <wsdl:message name="IService1_displayProject_OutputMessage">
     <wsdl:part name="parameters" element="tns:displayProjectResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_markProjectAsComplete_InputMessage">
+    <wsdl:part name="parameters" element="tns:markProjectAsComplete" />
+  </wsdl:message>
+  <wsdl:message name="IService1_markProjectAsComplete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:markProjectAsCompleteResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_projectOnWhichWork_InputMessage">
     <wsdl:part name="parameters" element="tns:projectOnWhichWork" />
   </wsdl:message>
@@ -90,6 +96,10 @@
     <wsdl:operation name="displayProject">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/displayProject" message="tns:IService1_displayProject_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/displayProjectResponse" message="tns:IService1_displayProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="markProjectAsComplete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/markProjectAsComplete" message="tns:IService1_markProjectAsComplete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/markProjectAsCompleteResponse" message="tns:IService1_markProjectAsComplete_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="projectOnWhichWork">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/projectOnWhichWork" message="tns:IService1_projectOnWhichWork_InputMessage" />
@@ -158,6 +168,15 @@
     </wsdl:operation>
     <wsdl:operation name="displayProject">
       <soap:operation soapAction="http://tempuri.org/IService1/displayProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="markProjectAsComplete">
+      <soap:operation soapAction="http://tempuri.org/IService1/markProjectAsComplete" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

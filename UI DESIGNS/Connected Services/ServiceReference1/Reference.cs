@@ -402,6 +402,12 @@ namespace UI_DESIGNS.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/displayProject", ReplyAction="http://tempuri.org/IService1/displayProjectResponse")]
         System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Project[]> displayProjectAsync(UI_DESIGNS.ServiceReference1.User admin);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/markProjectAsComplete", ReplyAction="http://tempuri.org/IService1/markProjectAsCompleteResponse")]
+        string markProjectAsComplete(UI_DESIGNS.ServiceReference1.User admin, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/markProjectAsComplete", ReplyAction="http://tempuri.org/IService1/markProjectAsCompleteResponse")]
+        System.Threading.Tasks.Task<string> markProjectAsCompleteAsync(UI_DESIGNS.ServiceReference1.User admin, int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/projectOnWhichWork", ReplyAction="http://tempuri.org/IService1/projectOnWhichWorkResponse")]
         UI_DESIGNS.ServiceReference1.Project[] projectOnWhichWork(UI_DESIGNS.ServiceReference1.User user);
         
@@ -496,6 +502,14 @@ namespace UI_DESIGNS.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Project[]> displayProjectAsync(UI_DESIGNS.ServiceReference1.User admin) {
             return base.Channel.displayProjectAsync(admin);
+        }
+        
+        public string markProjectAsComplete(UI_DESIGNS.ServiceReference1.User admin, int id) {
+            return base.Channel.markProjectAsComplete(admin, id);
+        }
+        
+        public System.Threading.Tasks.Task<string> markProjectAsCompleteAsync(UI_DESIGNS.ServiceReference1.User admin, int id) {
+            return base.Channel.markProjectAsCompleteAsync(admin, id);
         }
         
         public UI_DESIGNS.ServiceReference1.Project[] projectOnWhichWork(UI_DESIGNS.ServiceReference1.User user) {

@@ -32,14 +32,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView_for_all = new System.Windows.Forms.DataGridView();
-            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView_for_complete = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_for_users = new System.Windows.Forms.DataGridView();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
@@ -59,7 +55,19 @@
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView_for_active = new System.Windows.Forms.DataGridView();
-            this.update_complete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.markAsComplete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.viewUsers = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewUsers_complete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.id_complete = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +75,7 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.update_active = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.markAsComplete_active = new System.Windows.Forms.DataGridViewButtonColumn();
             this.viewUsers_active = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.id_active = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,24 +83,16 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.update = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.viewUsers = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_all)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_complete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_users)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_active)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -126,6 +126,7 @@
             this.dataGridView_for_all.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_for_all.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.update,
+            this.markAsComplete,
             this.viewUsers,
             this.status,
             this.id,
@@ -143,10 +144,6 @@
             this.dataGridView_for_all.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView_for_all.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_for_all_CellContentClick);
             // 
-            // projectBindingSource
-            // 
-            this.projectBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.Project);
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dataGridView_for_complete);
@@ -163,7 +160,6 @@
             this.dataGridView_for_complete.AutoGenerateColumns = false;
             this.dataGridView_for_complete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_for_complete.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.update_complete,
             this.viewUsers_complete,
             this.dataGridViewCheckBoxColumn2,
             this.id_complete,
@@ -209,28 +205,6 @@
             this.dataGridView_for_users.RowTemplate.Height = 24;
             this.dataGridView_for_users.Size = new System.Drawing.Size(341, 439);
             this.dataGridView_for_users.TabIndex = 3;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "Email";
-            this.email.HeaderText = "Email";
-            this.email.MinimumWidth = 7;
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 130;
-            // 
-            // role
-            // 
-            this.role.DataPropertyName = "Role";
-            this.role.HeaderText = "Role";
-            this.role.MinimumWidth = 7;
-            this.role.Name = "role";
-            this.role.ReadOnly = true;
-            this.role.Width = 130;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.User);
             // 
             // label4
             // 
@@ -394,7 +368,7 @@
             this.dataGridView_for_active.AutoGenerateColumns = false;
             this.dataGridView_for_active.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_for_active.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.update_active,
+            this.markAsComplete_active,
             this.viewUsers_active,
             this.dataGridViewCheckBoxColumn3,
             this.id_active,
@@ -411,14 +385,112 @@
             this.dataGridView_for_active.TabIndex = 2;
             this.dataGridView_for_active.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_for_active_CellContentClick);
             // 
-            // update_complete
+            // update
             // 
-            this.update_complete.HeaderText = "Update";
-            this.update_complete.MinimumWidth = 7;
-            this.update_complete.Name = "update_complete";
-            this.update_complete.Text = "update";
-            this.update_complete.UseColumnTextForButtonValue = true;
-            this.update_complete.Width = 130;
+            this.update.HeaderText = "Update";
+            this.update.MinimumWidth = 7;
+            this.update.Name = "update";
+            this.update.Text = "update";
+            this.update.UseColumnTextForButtonValue = true;
+            this.update.Width = 130;
+            // 
+            // markAsComplete
+            // 
+            this.markAsComplete.HeaderText = "Mark Project ";
+            this.markAsComplete.MinimumWidth = 7;
+            this.markAsComplete.Name = "markAsComplete";
+            this.markAsComplete.Text = "As Completed";
+            this.markAsComplete.UseColumnTextForButtonValue = true;
+            this.markAsComplete.Width = 130;
+            // 
+            // viewUsers
+            // 
+            this.viewUsers.HeaderText = "Assigned To";
+            this.viewUsers.MinimumWidth = 7;
+            this.viewUsers.Name = "viewUsers";
+            this.viewUsers.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewUsers.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.viewUsers.Text = "View Users";
+            this.viewUsers.UseColumnTextForButtonValue = true;
+            this.viewUsers.Width = 130;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 7;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 130;
+            // 
+            // role
+            // 
+            this.role.DataPropertyName = "Role";
+            this.role.HeaderText = "Role";
+            this.role.MinimumWidth = 7;
+            this.role.Name = "role";
+            this.role.ReadOnly = true;
+            this.role.Width = 130;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.User);
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Status";
+            this.status.MinimumWidth = 7;
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 130;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 7;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 130;
+            // 
+            // title
+            // 
+            this.title.DataPropertyName = "Title";
+            this.title.HeaderText = "Title";
+            this.title.MinimumWidth = 7;
+            this.title.Name = "title";
+            this.title.Width = 130;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "Description";
+            this.description.HeaderText = "Description";
+            this.description.MinimumWidth = 7;
+            this.description.Name = "description";
+            this.description.Width = 130;
+            // 
+            // startDate
+            // 
+            this.startDate.DataPropertyName = "StartDate";
+            this.startDate.HeaderText = "StartDate";
+            this.startDate.MinimumWidth = 7;
+            this.startDate.Name = "startDate";
+            this.startDate.ReadOnly = true;
+            this.startDate.Width = 130;
+            // 
+            // endDate
+            // 
+            this.endDate.DataPropertyName = "EndDate";
+            this.endDate.HeaderText = "EndDate";
+            this.endDate.MinimumWidth = 7;
+            this.endDate.Name = "endDate";
+            this.endDate.ReadOnly = true;
+            this.endDate.Width = 130;
+            // 
+            // projectBindingSource
+            // 
+            this.projectBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.Project);
             // 
             // viewUsers_complete
             // 
@@ -481,14 +553,17 @@
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Width = 130;
             // 
-            // update_active
+            // markAsComplete_active
             // 
-            this.update_active.HeaderText = "Update";
-            this.update_active.MinimumWidth = 7;
-            this.update_active.Name = "update_active";
-            this.update_active.Text = "update";
-            this.update_active.UseColumnTextForButtonValue = true;
-            this.update_active.Width = 130;
+            this.markAsComplete_active.DataPropertyName = "Description";
+            this.markAsComplete_active.HeaderText = "Mark Project";
+            this.markAsComplete_active.MinimumWidth = 7;
+            this.markAsComplete_active.Name = "markAsComplete_active";
+            this.markAsComplete_active.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.markAsComplete_active.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.markAsComplete_active.Text = "As Completed";
+            this.markAsComplete_active.UseColumnTextForButtonValue = true;
+            this.markAsComplete_active.Width = 130;
             // 
             // viewUsers_active
             // 
@@ -551,78 +626,6 @@
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
             this.dataGridViewTextBoxColumn15.Width = 130;
             // 
-            // update
-            // 
-            this.update.HeaderText = "Update";
-            this.update.MinimumWidth = 7;
-            this.update.Name = "update";
-            this.update.Text = "update";
-            this.update.UseColumnTextForButtonValue = true;
-            this.update.Width = 130;
-            // 
-            // viewUsers
-            // 
-            this.viewUsers.HeaderText = "Assigned To";
-            this.viewUsers.MinimumWidth = 7;
-            this.viewUsers.Name = "viewUsers";
-            this.viewUsers.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewUsers.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.viewUsers.Text = "View Users";
-            this.viewUsers.UseColumnTextForButtonValue = true;
-            this.viewUsers.Width = 130;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "Status";
-            this.status.HeaderText = "Status";
-            this.status.MinimumWidth = 7;
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 130;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Id";
-            this.id.MinimumWidth = 7;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 130;
-            // 
-            // title
-            // 
-            this.title.DataPropertyName = "Title";
-            this.title.HeaderText = "Title";
-            this.title.MinimumWidth = 7;
-            this.title.Name = "title";
-            this.title.Width = 130;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "Description";
-            this.description.HeaderText = "Description";
-            this.description.MinimumWidth = 7;
-            this.description.Name = "description";
-            this.description.Width = 130;
-            // 
-            // startDate
-            // 
-            this.startDate.DataPropertyName = "StartDate";
-            this.startDate.HeaderText = "StartDate";
-            this.startDate.MinimumWidth = 7;
-            this.startDate.Name = "startDate";
-            this.startDate.ReadOnly = true;
-            this.startDate.Width = 130;
-            // 
-            // endDate
-            // 
-            this.endDate.DataPropertyName = "EndDate";
-            this.endDate.HeaderText = "EndDate";
-            this.endDate.MinimumWidth = 7;
-            this.endDate.Name = "endDate";
-            this.endDate.ReadOnly = true;
-            this.endDate.Width = 130;
-            // 
             // projects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -646,13 +649,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_all)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_complete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_users)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_active)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -691,6 +694,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.DataGridView dataGridView_for_active;
         private System.Windows.Forms.DataGridViewButtonColumn update;
+        private System.Windows.Forms.DataGridViewButtonColumn markAsComplete;
         private System.Windows.Forms.DataGridViewButtonColumn viewUsers;
         private System.Windows.Forms.DataGridViewCheckBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
@@ -698,7 +702,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDate;
-        private System.Windows.Forms.DataGridViewButtonColumn update_active;
+        private System.Windows.Forms.DataGridViewButtonColumn markAsComplete_active;
         private System.Windows.Forms.DataGridViewButtonColumn viewUsers_active;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_active;
@@ -706,7 +710,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewButtonColumn update_complete;
         private System.Windows.Forms.DataGridViewButtonColumn viewUsers_complete;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_complete;

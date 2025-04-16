@@ -47,7 +47,7 @@ namespace UI_DESIGNS
 
                 MessageBox.Show("No users found");
             }
-           
+
         }
         private void LoadProjects()
         {
@@ -64,7 +64,7 @@ namespace UI_DESIGNS
                 if (s.ToLower() == "all")
                 {
                     projects.Add(projectData[i]);
-                }else if (s.ToLower() == "active")
+                } else if (s.ToLower() == "active")
                 {
                     if (projectData[i].Status == true)
                     {
@@ -79,9 +79,9 @@ namespace UI_DESIGNS
                     }
                 }
             }
-            if(projects.Count > 0)
+            if (projects.Count > 0)
             {
-                if(s.ToLower() == "all")
+                if (s.ToLower() == "all")
                 {
                     dataGridView_for_all.DataSource = projects;
                 }
@@ -98,7 +98,7 @@ namespace UI_DESIGNS
             //{
             //    MessageBox.Show("No projects found");
             //}
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -112,9 +112,9 @@ namespace UI_DESIGNS
             LoadedIntoDataSetProjects("all");
 
         }
-       
 
-    
+
+
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -122,7 +122,7 @@ namespace UI_DESIGNS
 
             if (selectedTab == "All Projects")
                 LoadedIntoDataSetProjects("all");
-            else if(selectedTab == "Selected Projects")
+            else if (selectedTab == "Selected Projects")
             {
                 LoadedIntoDataSetProjects("active");
             }
@@ -130,12 +130,12 @@ namespace UI_DESIGNS
             {
                 LoadedIntoDataSetProjects("completed");
             }
-           
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -164,6 +164,14 @@ namespace UI_DESIGNS
                 }
 
                 dataGridView_for_users.DataSource = users;
+            } else if (e.ColumnIndex == dataGridView_for_active.Columns["markAsComplete_active"].Index)
+            {
+                int projectId = Convert.ToInt32(dataGridView_for_active.Rows[e.RowIndex].Cells["id_active"].Value);
+                ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                string res = client.markProjectAsComplete(adminData, projectId);
+                MessageBox.Show(res);
+                LoadProjects();
+                LoadedIntoDataSetProjects("active");
             }
         }
 
@@ -187,8 +195,16 @@ namespace UI_DESIGNS
                 }
 
                 dataGridView_for_users.DataSource = users;
-            }
-        }
+            }else if(e.ColumnIndex==dataGridView_for_all.Columns["markAsComplete"].Index)
+            {
+                int projectId = Convert.ToInt32(dataGridView_for_all.Rows[e.RowIndex].Cells["id"].Value);
+        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+        string res = client.markProjectAsComplete(adminData, projectId);
+        MessageBox.Show(res);
+                LoadProjects();
+        LoadedIntoDataSetProjects("all");
+    }
+}
 
         private void dataGridView_for_complete_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
