@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.messagesContainerPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.refresh_Chat = new System.Windows.Forms.Button();
             this.chat_name = new System.Windows.Forms.Label();
             this.SendingMessage_txtbx = new System.Windows.Forms.TextBox();
             this.sendMessageButton = new System.Windows.Forms.Button();
+            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -62,29 +62,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(269, 675);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Id";
-            this.id.MinimumWidth = 7;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 130;
-            // 
-            // title
-            // 
-            this.title.DataPropertyName = "Title";
-            this.title.HeaderText = "Title";
-            this.title.MinimumWidth = 7;
-            this.title.Name = "title";
-            this.title.ReadOnly = true;
-            this.title.Width = 130;
-            // 
-            // projectBindingSource
-            // 
-            this.projectBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.Project);
             // 
             // messagesContainerPanel
             // 
@@ -143,6 +120,29 @@
             this.sendMessageButton.UseVisualStyleBackColor = false;
             this.sendMessageButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // projectBindingSource
+            // 
+            this.projectBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.Project);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 7;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 130;
+            // 
+            // title
+            // 
+            this.title.DataPropertyName = "Title";
+            this.title.HeaderText = "Title";
+            this.title.MinimumWidth = 7;
+            this.title.Name = "title";
+            this.title.ReadOnly = true;
+            this.title.Width = 170;
+            // 
             // FeedbackChatBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -156,9 +156,9 @@
             this.Size = new System.Drawing.Size(1217, 678);
             this.Load += new System.EventHandler(this.FeedbackChatBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,13 +168,13 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource projectBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.FlowLayoutPanel messagesContainerPanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label chat_name;
         private System.Windows.Forms.TextBox SendingMessage_txtbx;
         private System.Windows.Forms.Button sendMessageButton;
         private System.Windows.Forms.Button refresh_Chat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn title;
     }
 }

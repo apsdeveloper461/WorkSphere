@@ -58,6 +58,12 @@
     <Compile Include="addProject.Designer.cs">
       <DependentUpon>addProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTimeLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddTimeLog.Designer.cs">
+      <DependentUpon>AddTimeLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adduser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     <EmbeddedResource Include="addProject.resx">
       <DependentUpon>addProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddTimeLog.resx">
+      <DependentUpon>AddTimeLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Adduser.resx">
       <DependentUpon>Adduser.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +233,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\UI_DESIGNS.ServiceReference1.Project.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\UI_DESIGNS.ServiceReference1.TimeLog.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\UI_DESIGNS.ServiceReference1.User.datasource">

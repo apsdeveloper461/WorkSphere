@@ -422,6 +422,147 @@ namespace UI_DESIGNS.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TimeLog", Namespace="http://schemas.datacontract.org/2004/07/WorkShere_Backend")]
+    [System.SerializableAttribute()]
+    public partial class TimeLog : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UI_DESIGNS.ServiceReference1.User DeveloperField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UI_DESIGNS.ServiceReference1.Project ProjectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float WorkedHoursField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UI_DESIGNS.ServiceReference1.User Developer {
+            get {
+                return this.DeveloperField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeveloperField, value) != true)) {
+                    this.DeveloperField = value;
+                    this.RaisePropertyChanged("Developer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UI_DESIGNS.ServiceReference1.Project Project {
+            get {
+                return this.ProjectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectField, value) != true)) {
+                    this.ProjectField = value;
+                    this.RaisePropertyChanged("Project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float WorkedHours {
+            get {
+                return this.WorkedHoursField;
+            }
+            set {
+                if ((this.WorkedHoursField.Equals(value) != true)) {
+                    this.WorkedHoursField = value;
+                    this.RaisePropertyChanged("WorkedHours");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WorkShere_Backend")]
     [System.SerializableAttribute()]
     public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -545,6 +686,12 @@ namespace UI_DESIGNS.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/projectOnWhichWork", ReplyAction="http://tempuri.org/IService1/projectOnWhichWorkResponse")]
         System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Project[]> projectOnWhichWorkAsync(UI_DESIGNS.ServiceReference1.User user);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/projectCurrentlyOnWhichWork", ReplyAction="http://tempuri.org/IService1/projectCurrentlyOnWhichWorkResponse")]
+        UI_DESIGNS.ServiceReference1.Project[] projectCurrentlyOnWhichWork(UI_DESIGNS.ServiceReference1.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/projectCurrentlyOnWhichWork", ReplyAction="http://tempuri.org/IService1/projectCurrentlyOnWhichWorkResponse")]
+        System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Project[]> projectCurrentlyOnWhichWorkAsync(UI_DESIGNS.ServiceReference1.User user);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addNewFeedback", ReplyAction="http://tempuri.org/IService1/addNewFeedbackResponse")]
         string addNewFeedback(UI_DESIGNS.ServiceReference1.User user, int projectId, string message);
         
@@ -556,6 +703,18 @@ namespace UI_DESIGNS.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getFeedbacks", ReplyAction="http://tempuri.org/IService1/getFeedbacksResponse")]
         System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Feedback[]> getFeedbacksAsync(UI_DESIGNS.ServiceReference1.User user, int projectId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addTimeLog", ReplyAction="http://tempuri.org/IService1/addTimeLogResponse")]
+        string addTimeLog(UI_DESIGNS.ServiceReference1.User user, int projectId, string description, float workedHours, string status, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addTimeLog", ReplyAction="http://tempuri.org/IService1/addTimeLogResponse")]
+        System.Threading.Tasks.Task<string> addTimeLogAsync(UI_DESIGNS.ServiceReference1.User user, int projectId, string description, float workedHours, string status, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getTimeLogsByUserId", ReplyAction="http://tempuri.org/IService1/getTimeLogsByUserIdResponse")]
+        UI_DESIGNS.ServiceReference1.TimeLog[] getTimeLogsByUserId(UI_DESIGNS.ServiceReference1.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getTimeLogsByUserId", ReplyAction="http://tempuri.org/IService1/getTimeLogsByUserIdResponse")]
+        System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.TimeLog[]> getTimeLogsByUserIdAsync(UI_DESIGNS.ServiceReference1.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite);
@@ -671,6 +830,14 @@ namespace UI_DESIGNS.ServiceReference1 {
             return base.Channel.projectOnWhichWorkAsync(user);
         }
         
+        public UI_DESIGNS.ServiceReference1.Project[] projectCurrentlyOnWhichWork(UI_DESIGNS.ServiceReference1.User user) {
+            return base.Channel.projectCurrentlyOnWhichWork(user);
+        }
+        
+        public System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Project[]> projectCurrentlyOnWhichWorkAsync(UI_DESIGNS.ServiceReference1.User user) {
+            return base.Channel.projectCurrentlyOnWhichWorkAsync(user);
+        }
+        
         public string addNewFeedback(UI_DESIGNS.ServiceReference1.User user, int projectId, string message) {
             return base.Channel.addNewFeedback(user, projectId, message);
         }
@@ -685,6 +852,22 @@ namespace UI_DESIGNS.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Feedback[]> getFeedbacksAsync(UI_DESIGNS.ServiceReference1.User user, int projectId) {
             return base.Channel.getFeedbacksAsync(user, projectId);
+        }
+        
+        public string addTimeLog(UI_DESIGNS.ServiceReference1.User user, int projectId, string description, float workedHours, string status, System.DateTime date) {
+            return base.Channel.addTimeLog(user, projectId, description, workedHours, status, date);
+        }
+        
+        public System.Threading.Tasks.Task<string> addTimeLogAsync(UI_DESIGNS.ServiceReference1.User user, int projectId, string description, float workedHours, string status, System.DateTime date) {
+            return base.Channel.addTimeLogAsync(user, projectId, description, workedHours, status, date);
+        }
+        
+        public UI_DESIGNS.ServiceReference1.TimeLog[] getTimeLogsByUserId(UI_DESIGNS.ServiceReference1.User user) {
+            return base.Channel.getTimeLogsByUserId(user);
+        }
+        
+        public System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.TimeLog[]> getTimeLogsByUserIdAsync(UI_DESIGNS.ServiceReference1.User user) {
+            return base.Channel.getTimeLogsByUserIdAsync(user);
         }
         
         public UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite) {

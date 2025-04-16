@@ -53,6 +53,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Feedback" nillable="true" type="tns:Feedback" />
+  <xs:complexType name="ArrayOfTimeLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeLog" nillable="true" type="tns:TimeLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeLog" nillable="true" type="tns:ArrayOfTimeLog" />
+  <xs:complexType name="TimeLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Developer" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Project" nillable="true" type="tns:Project" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkedHours" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeLog" nillable="true" type="tns:TimeLog" />
   <xs:complexType name="CompositeType">
     <xs:sequence>
       <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
