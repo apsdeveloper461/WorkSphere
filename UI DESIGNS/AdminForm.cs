@@ -68,7 +68,7 @@ namespace UI_DESIGNS
 
         private void button5_Click(object sender, EventArgs e)
         {
-            LoadForm(new projects());
+            LoadForm(new projects(adminData));
         }
 
         private void button12_Click(object sender, EventArgs e)
