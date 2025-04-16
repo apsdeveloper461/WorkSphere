@@ -28,7 +28,15 @@ namespace UI_DESIGNS
         private void LoadedProject()
         {
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-            ServiceReference1.Project[] projects = client.displayProject(userData);
+            List<ServiceReference1.Project> projects=new List<ServiceReference1.Project>();
+            if(userData.Role == "Admin")
+            {
+                projects = client.displayProject(userData).ToList();
+            }
+            else if(userData.Role =="developer" ||  userData.Role == "product manager")
+            {
+                projects = client.projectOnWhichWork(userData).ToList();
+            }
             if (projectBindingSource != null)
             {
                 dataGridView1.DataSource = projects;
