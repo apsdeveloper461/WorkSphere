@@ -129,33 +129,40 @@ namespace UI_DESIGNS
         {
             if (e.ColumnIndex == dgvUsers.Columns["Update"].Index)
             {
-                // Update user logic
-                int userId = Convert.ToInt32(dgvUsers.Rows[e.RowIndex].Cells["id"].Value);
-                string userName = dgvUsers.Rows[e.RowIndex].Cells["Name"].Value.ToString();
-                string userEmail = dgvUsers.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                string userRole = dgvUsers.Rows[e.RowIndex].Cells["Role"].Value.ToString();
-                string password = dgvUsers.Rows[e.RowIndex].Cells["Password"].Value.ToString();
-                bool isActive = Convert.ToBoolean(dgvUsers.Rows[e.RowIndex].Cells["activationStatus"].Value);
-                if (userName.Trim().Length > 5 && userEmail.Contains("@") && userEmail.Contains(".com") && userRole != "" && password.Length > 5)
+                const string message = "Are you sure you want to update this user?";
+                const string caption = "Update User";
+                var res = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
                 {
-                    if (userRole == "developer" || userRole == "product manager")
+                    // Update user logic
+                    int userId = Convert.ToInt32(dgvUsers.Rows[e.RowIndex].Cells["id"].Value);
+                    string userName = dgvUsers.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+                    string userEmail = dgvUsers.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                    string userRole = dgvUsers.Rows[e.RowIndex].Cells["Role"].Value.ToString();
+                    string password = dgvUsers.Rows[e.RowIndex].Cells["Password"].Value.ToString();
+                    bool isActive = Convert.ToBoolean(dgvUsers.Rows[e.RowIndex].Cells["activationStatus"].Value);
+                    if (userName.Trim().Length > 5 && userEmail.Contains("@") && userEmail.Contains(".com") && userRole != "" && password.Length > 5)
                     {
+                        if (userRole == "developer" || userRole == "product manager")
+                        {
 
-                        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-                        string result = client.updateUser(adminData, userId, userRole, userName, userEmail, password, isActive);
-                        MessageBox.Show(result);
-                        LoadUsers();
-                        LoadedUsersInToDataSet("all");
+                            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                            string result = client.updateUser(adminData, userId, userRole, userName, userEmail, password, isActive);
+                            MessageBox.Show(result);
+                        }
+                        else
+                        {
+                            MessageBox.Show("You can only update role to developer or product manager.", "Limitation of Role Updation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("You can only update role to developer or product manager.","Limitation of Role Updation",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        MessageBox.Show("1. Name must me greater than 5 character.\n2. Email must contains @ and .com.\n3.Password also greater than 5 characters", "Please fill all the fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("1. Name must me greater than 5 character.\n2. Email must contains @ and .com.\n3.Password also greater than 5 characters", "Please fill all the fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+
+                LoadUsers();
+                LoadedUsersInToDataSet("all");
             }
 
         }
@@ -254,35 +261,42 @@ namespace UI_DESIGNS
         {
             if (e.ColumnIndex == dataGridView_for_active.Columns["Update_active"].Index)
             {
-                // Update user logic
-                int userId = Convert.ToInt32(dataGridView_for_active.Rows[e.RowIndex].Cells["id_active"].Value);
-                string userName = dataGridView_for_active.Rows[e.RowIndex].Cells["Name_active"].Value.ToString();
-                string userEmail = dataGridView_for_active.Rows[e.RowIndex].Cells["Email_active"].Value.ToString();
-                string userRole = dataGridView_for_active.Rows[e.RowIndex].Cells["Role_active"].Value.ToString();
-                string password = dataGridView_for_active.Rows[e.RowIndex].Cells["Password_active"].Value.ToString();
-                bool isActive = Convert.ToBoolean(dataGridView_for_active.Rows[e.RowIndex].Cells["activationStatus_active"].Value);
-                //bool workingStatus = Convert.ToBoolean(dataGridView_for_active.Rows[e.RowIndex].Cells["workingStatus_active"].Value);
-                if (userName.Trim().Length > 5 && userEmail.Contains("@") && userEmail.Contains(".com") && userRole != "" && password.Length > 5)
+                const string message = "Are you sure you want to update this user?";
+                const string caption = "Update User";
+                var res = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
                 {
-                    
-                    if (userRole == "developer" || userRole == "product manager")
+                    // Update user logic
+                    int userId = Convert.ToInt32(dataGridView_for_active.Rows[e.RowIndex].Cells["id_active"].Value);
+                    string userName = dataGridView_for_active.Rows[e.RowIndex].Cells["Name_active"].Value.ToString();
+                    string userEmail = dataGridView_for_active.Rows[e.RowIndex].Cells["Email_active"].Value.ToString();
+                    string userRole = dataGridView_for_active.Rows[e.RowIndex].Cells["Role_active"].Value.ToString();
+                    string password = dataGridView_for_active.Rows[e.RowIndex].Cells["Password_active"].Value.ToString();
+                    bool isActive = Convert.ToBoolean(dataGridView_for_active.Rows[e.RowIndex].Cells["activationStatus_active"].Value);
+                    //bool workingStatus = Convert.ToBoolean(dataGridView_for_active.Rows[e.RowIndex].Cells["workingStatus_active"].Value);
+                    if (userName.Trim().Length > 5 && userEmail.Contains("@") && userEmail.Contains(".com") && userRole != "" && password.Length > 5)
                     {
 
-                        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-                        string result = client.updateUser(adminData, userId, userRole, userName, userEmail, password, isActive);
-                        MessageBox.Show(result);
-                        LoadUsers();
-                        LoadedUsersInToDataSet("Active");
+                        if (userRole == "developer" || userRole == "product manager")
+                        {
+
+                            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                            string result = client.updateUser(adminData, userId, userRole, userName, userEmail, password, isActive);
+                            MessageBox.Show(result);
+                           
+                        }
+                        else
+                        {
+                            MessageBox.Show("You can only update role to developer or product manager.", "Limitation of Role Updation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("You can only update role to developer or product manager.", "Limitation of Role Updation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("1. Name must me greater than 5 character.\n2. Email must contains @ and .com.\n3.Password also greater than 5 characters", "Please fill all the fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("1. Name must me greater than 5 character.\n2. Email must contains @ and .com.\n3.Password also greater than 5 characters", "Please fill all the fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                LoadUsers();
+                LoadedUsersInToDataSet("Active");
             }
         }
 
@@ -290,33 +304,40 @@ namespace UI_DESIGNS
         {
             if (e.ColumnIndex == dataGridView_for_inactive.Columns["Update_inactive"].Index)
             {
-                // Update user logic
-                int userId = Convert.ToInt32(dataGridView_for_inactive.Rows[e.RowIndex].Cells["id_inactive"].Value);
-                string userName = dataGridView_for_inactive.Rows[e.RowIndex].Cells["Name_inactive"].Value.ToString();
-                string userEmail = dataGridView_for_inactive.Rows[e.RowIndex].Cells["Email_inactive"].Value.ToString();
-                string userRole = dataGridView_for_inactive.Rows[e.RowIndex].Cells["Role_inactive"].Value.ToString();
-                string password = dataGridView_for_inactive.Rows[e.RowIndex].Cells["Password_inactive"].Value.ToString();
-                bool isActive = Convert.ToBoolean(dataGridView_for_inactive.Rows[e.RowIndex].Cells["activationStatus_inactive"].Value);
-                if (userName.Trim().Length > 5 && userEmail.Contains("@") && userEmail.Contains(".com") && userRole != "" && password.Length > 5)
+                const string message = "Are you sure you want to update this user?";
+                const string caption = "Update User";
+                var res = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
                 {
-                    if (userRole == "developer" || userRole == "product manager")
+                    // Update user logic
+                    int userId = Convert.ToInt32(dataGridView_for_inactive.Rows[e.RowIndex].Cells["id_inactive"].Value);
+                    string userName = dataGridView_for_inactive.Rows[e.RowIndex].Cells["Name_inactive"].Value.ToString();
+                    string userEmail = dataGridView_for_inactive.Rows[e.RowIndex].Cells["Email_inactive"].Value.ToString();
+                    string userRole = dataGridView_for_inactive.Rows[e.RowIndex].Cells["Role_inactive"].Value.ToString();
+                    string password = dataGridView_for_inactive.Rows[e.RowIndex].Cells["Password_inactive"].Value.ToString();
+                    bool isActive = Convert.ToBoolean(dataGridView_for_inactive.Rows[e.RowIndex].Cells["activationStatus_inactive"].Value);
+                    if (userName.Trim().Length > 5 && userEmail.Contains("@") && userEmail.Contains(".com") && userRole != "" && password.Length > 5)
                     {
+                        if (userRole == "developer" || userRole == "product manager")
+                        {
 
-                        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-                        string result = client.updateUser(adminData, userId, userRole, userName, userEmail, password, isActive);
-                        MessageBox.Show(result);
-                        LoadUsers();
-                        LoadedUsersInToDataSet("Inactive");
+                            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                            string result = client.updateUser(adminData, userId, userRole, userName, userEmail, password, isActive);
+                            MessageBox.Show(result);
+                          
+                        }
+                        else
+                        {
+                            MessageBox.Show("You can only update role to developer or product manager.", "Limitation of Role Updation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("You can only update role to developer or product manager.", "Limitation of Role Updation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("1. Name must me greater than 5 character.\n2. Email must contains @ and .com.\n3.Password also greater than 5 characters", "Please fill all the fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("1. Name must me greater than 5 character.\n2. Email must contains @ and .com.\n3.Password also greater than 5 characters", "Please fill all the fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                LoadUsers();
+                LoadedUsersInToDataSet("Inactive");
             }
 
         }

@@ -521,6 +521,12 @@ namespace UI_DESIGNS.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addNewProject", ReplyAction="http://tempuri.org/IService1/addNewProjectResponse")]
         System.Threading.Tasks.Task<string> addNewProjectAsync(UI_DESIGNS.ServiceReference1.User admin, string title, string description, string[] AssignedToUserEmails);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateProject", ReplyAction="http://tempuri.org/IService1/updateProjectResponse")]
+        string updateProject(UI_DESIGNS.ServiceReference1.User admin, int pid, string title, string description);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateProject", ReplyAction="http://tempuri.org/IService1/updateProjectResponse")]
+        System.Threading.Tasks.Task<string> updateProjectAsync(UI_DESIGNS.ServiceReference1.User admin, int pid, string title, string description);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/displayProject", ReplyAction="http://tempuri.org/IService1/displayProjectResponse")]
         UI_DESIGNS.ServiceReference1.Project[] displayProject(UI_DESIGNS.ServiceReference1.User admin);
         
@@ -631,6 +637,14 @@ namespace UI_DESIGNS.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> addNewProjectAsync(UI_DESIGNS.ServiceReference1.User admin, string title, string description, string[] AssignedToUserEmails) {
             return base.Channel.addNewProjectAsync(admin, title, description, AssignedToUserEmails);
+        }
+        
+        public string updateProject(UI_DESIGNS.ServiceReference1.User admin, int pid, string title, string description) {
+            return base.Channel.updateProject(admin, pid, title, description);
+        }
+        
+        public System.Threading.Tasks.Task<string> updateProjectAsync(UI_DESIGNS.ServiceReference1.User admin, int pid, string title, string description) {
+            return base.Channel.updateProjectAsync(admin, pid, title, description);
         }
         
         public UI_DESIGNS.ServiceReference1.Project[] displayProject(UI_DESIGNS.ServiceReference1.User admin) {

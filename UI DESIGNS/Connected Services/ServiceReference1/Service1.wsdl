@@ -44,6 +44,12 @@
   <wsdl:message name="IService1_addNewProject_OutputMessage">
     <wsdl:part name="parameters" element="tns:addNewProjectResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_updateProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateProject" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateProjectResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_displayProject_InputMessage">
     <wsdl:part name="parameters" element="tns:displayProject" />
   </wsdl:message>
@@ -104,6 +110,10 @@
     <wsdl:operation name="addNewProject">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addNewProject" message="tns:IService1_addNewProject_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addNewProjectResponse" message="tns:IService1_addNewProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateProject" message="tns:IService1_updateProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateProjectResponse" message="tns:IService1_updateProject_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="displayProject">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/displayProject" message="tns:IService1_displayProject_InputMessage" />
@@ -179,6 +189,15 @@
     </wsdl:operation>
     <wsdl:operation name="addNewProject">
       <soap:operation soapAction="http://tempuri.org/IService1/addNewProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProject">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateProject" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -199,15 +199,43 @@ namespace UI_DESIGNS
                 }
 
                 dataGridView_for_users.DataSource = users;
-            }else if(e.ColumnIndex==dataGridView_for_all.Columns["markAsComplete"].Index)
+            }
+            else if (e.ColumnIndex == dataGridView_for_all.Columns["markAsComplete"].Index)
             {
                 int projectId = Convert.ToInt32(dataGridView_for_all.Rows[e.RowIndex].Cells["id"].Value);
-        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-        string res = client.markProjectAsComplete(adminData, projectId);
-        MessageBox.Show(res);
+                ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                string res = client.markProjectAsComplete(adminData, projectId);
+                MessageBox.Show(res);
                 LoadProjects();
-        LoadedIntoDataSetProjects("all");
-    }
+                LoadedIntoDataSetProjects("all");
+            }
+            else if (e.ColumnIndex == dataGridView_for_all.Columns["update"].Index)
+            {
+                const string message = "Are you sure you want to update this project?";
+                const string caption = "Update Project";
+                var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    int projectId = Convert.ToInt32(dataGridView_for_all.Rows[e.RowIndex].Cells["id"].Value);
+                    string title = dataGridView_for_all.Rows[e.RowIndex].Cells["title"].Value.ToString();
+                    string description = dataGridView_for_all.Rows[e.RowIndex].Cells["description"].Value.ToString();
+                    //MessageBox.Show("" + projectId.ToString() + " " + title + " " + description);
+                    if (title.Length > 5 && description.Length > 10)
+                    {
+                        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                        string res = client.updateProject(adminData, projectId, title, description);
+                        MessageBox.Show(res);
+                    }
+                    else
+                    {
+                        MessageBox.Show("1. Title must be greater than 5 characters.\n2. Description must be greater than 10 characters.", "Please fill all the fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                }
+                LoadProjects();
+                LoadedIntoDataSetProjects("all");
+
+            }
 }
 
         private void dataGridView_for_complete_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -272,7 +300,7 @@ namespace UI_DESIGNS
             }
             else
             {
-                MessageBox.Show("1. Name must be greater than 5 characters.\n2. Description must be greater than 10 characters.", "Please fill all the fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("1. Title must be greater than 5 characters.\n2. Description must be greater than 10 characters.", "Please fill all the fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
