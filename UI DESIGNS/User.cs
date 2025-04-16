@@ -261,8 +261,10 @@ namespace UI_DESIGNS
                 string userRole = dataGridView_for_active.Rows[e.RowIndex].Cells["Role_active"].Value.ToString();
                 string password = dataGridView_for_active.Rows[e.RowIndex].Cells["Password_active"].Value.ToString();
                 bool isActive = Convert.ToBoolean(dataGridView_for_active.Rows[e.RowIndex].Cells["activationStatus_active"].Value);
+                //bool workingStatus = Convert.ToBoolean(dataGridView_for_active.Rows[e.RowIndex].Cells["workingStatus_active"].Value);
                 if (userName.Trim().Length > 5 && userEmail.Contains("@") && userEmail.Contains(".com") && userRole != "" && password.Length > 5)
                 {
+                    
                     if (userRole == "developer" || userRole == "product manager")
                     {
 

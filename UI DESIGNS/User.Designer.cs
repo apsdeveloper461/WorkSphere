@@ -35,11 +35,11 @@
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView_for_active = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView_for_inactive = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView_for_active = new System.Windows.Forms.DataGridView();
-            this.dataGridView_for_inactive = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.working = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.workingStatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.activationStatus_active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.update_active = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id_active = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,10 +76,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_active)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_inactive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddUser
@@ -139,7 +139,7 @@
             this.email,
             this.password,
             this.role,
-            this.working});
+            this.workingStatus});
             this.dgvUsers.DataSource = this.userBindingSource1;
             this.dgvUsers.Location = new System.Drawing.Point(-9, 0);
             this.dgvUsers.Margin = new System.Windows.Forms.Padding(4);
@@ -167,38 +167,6 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.dataGridView_for_inactive);
-            this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(1421, 485);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Inactive Users";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.label1.Location = new System.Drawing.Point(7, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Users ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.User);
-            // 
             // dataGridView_for_active
             // 
             this.dataGridView_for_active.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -224,6 +192,20 @@
             this.dataGridView_for_active.TabIndex = 1;
             this.dataGridView_for_active.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_for_active_CellContentClick);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dataGridView_for_inactive);
+            this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Size = new System.Drawing.Size(1421, 485);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Inactive Users";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
             // dataGridView_for_inactive
             // 
             this.dataGridView_for_inactive.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -248,6 +230,24 @@
             this.dataGridView_for_inactive.Size = new System.Drawing.Size(1433, 491);
             this.dataGridView_for_inactive.TabIndex = 1;
             this.dataGridView_for_inactive.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_for_inactive_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.label1.Location = new System.Drawing.Point(7, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Users ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.User);
             // 
             // button1
             // 
@@ -369,13 +369,14 @@
             this.role.Name = "role";
             this.role.Width = 130;
             // 
-            // working
+            // workingStatus
             // 
-            this.working.DataPropertyName = "WorkingStatus";
-            this.working.HeaderText = "WorkingStatus";
-            this.working.MinimumWidth = 7;
-            this.working.Name = "working";
-            this.working.Width = 130;
+            this.workingStatus.DataPropertyName = "WorkingStatus";
+            this.workingStatus.HeaderText = "WorkingStatus";
+            this.workingStatus.MinimumWidth = 7;
+            this.workingStatus.Name = "workingStatus";
+            this.workingStatus.ReadOnly = true;
+            this.workingStatus.Width = 130;
             // 
             // activationStatus_active
             // 
@@ -441,6 +442,7 @@
             this.workingStatus_active.HeaderText = "WorkingStatus";
             this.workingStatus_active.MinimumWidth = 7;
             this.workingStatus_active.Name = "workingStatus_active";
+            this.workingStatus_active.ReadOnly = true;
             this.workingStatus_active.Width = 130;
             // 
             // ActivationStatus_inactive
@@ -507,6 +509,7 @@
             this.workingStatus_inactive.HeaderText = "WorkingStatus";
             this.workingStatus_inactive.MinimumWidth = 7;
             this.workingStatus_inactive.Name = "workingStatus_inactive";
+            this.workingStatus_inactive.ReadOnly = true;
             this.workingStatus_inactive.Width = 130;
             // 
             // User
@@ -534,10 +537,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_active)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_for_inactive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,7 +572,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn role;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn working;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn workingStatus;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activationStatus_active;
         private System.Windows.Forms.DataGridViewButtonColumn update_active;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_active;
