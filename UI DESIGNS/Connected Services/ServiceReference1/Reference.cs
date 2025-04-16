@@ -297,6 +297,131 @@ namespace UI_DESIGNS.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Feedback", Namespace="http://schemas.datacontract.org/2004/07/WorkShere_Backend")]
+    [System.SerializableAttribute()]
+    public partial class Feedback : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProjectIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SenderEmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SenderIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProjectId {
+            get {
+                return this.ProjectIdField;
+            }
+            set {
+                if ((this.ProjectIdField.Equals(value) != true)) {
+                    this.ProjectIdField = value;
+                    this.RaisePropertyChanged("ProjectId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SenderEmail {
+            get {
+                return this.SenderEmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SenderEmailField, value) != true)) {
+                    this.SenderEmailField = value;
+                    this.RaisePropertyChanged("SenderEmail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SenderId {
+            get {
+                return this.SenderIdField;
+            }
+            set {
+                if ((this.SenderIdField.Equals(value) != true)) {
+                    this.SenderIdField = value;
+                    this.RaisePropertyChanged("SenderId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WorkShere_Backend")]
     [System.SerializableAttribute()]
     public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -414,6 +539,18 @@ namespace UI_DESIGNS.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/projectOnWhichWork", ReplyAction="http://tempuri.org/IService1/projectOnWhichWorkResponse")]
         System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Project[]> projectOnWhichWorkAsync(UI_DESIGNS.ServiceReference1.User user);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addNewFeedback", ReplyAction="http://tempuri.org/IService1/addNewFeedbackResponse")]
+        string addNewFeedback(UI_DESIGNS.ServiceReference1.User user, int projectId, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addNewFeedback", ReplyAction="http://tempuri.org/IService1/addNewFeedbackResponse")]
+        System.Threading.Tasks.Task<string> addNewFeedbackAsync(UI_DESIGNS.ServiceReference1.User user, int projectId, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getFeedbacks", ReplyAction="http://tempuri.org/IService1/getFeedbacksResponse")]
+        UI_DESIGNS.ServiceReference1.Feedback[] getFeedbacks(UI_DESIGNS.ServiceReference1.User user, int projectId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getFeedbacks", ReplyAction="http://tempuri.org/IService1/getFeedbacksResponse")]
+        System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Feedback[]> getFeedbacksAsync(UI_DESIGNS.ServiceReference1.User user, int projectId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite);
         
@@ -518,6 +655,22 @@ namespace UI_DESIGNS.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Project[]> projectOnWhichWorkAsync(UI_DESIGNS.ServiceReference1.User user) {
             return base.Channel.projectOnWhichWorkAsync(user);
+        }
+        
+        public string addNewFeedback(UI_DESIGNS.ServiceReference1.User user, int projectId, string message) {
+            return base.Channel.addNewFeedback(user, projectId, message);
+        }
+        
+        public System.Threading.Tasks.Task<string> addNewFeedbackAsync(UI_DESIGNS.ServiceReference1.User user, int projectId, string message) {
+            return base.Channel.addNewFeedbackAsync(user, projectId, message);
+        }
+        
+        public UI_DESIGNS.ServiceReference1.Feedback[] getFeedbacks(UI_DESIGNS.ServiceReference1.User user, int projectId) {
+            return base.Channel.getFeedbacks(user, projectId);
+        }
+        
+        public System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Feedback[]> getFeedbacksAsync(UI_DESIGNS.ServiceReference1.User user, int projectId) {
+            return base.Channel.getFeedbacksAsync(user, projectId);
         }
         
         public UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite) {

@@ -12,14 +12,14 @@ namespace UI_DESIGNS
 {
     public partial class FeedbackChatBox : UserControl
     {
-        public ServiceReference1.User admin;
+        public ServiceReference1.User userData;
         private ServiceReference1.Project activeProject;
         private List<ServiceReference1.Project> projectsData = new List<ServiceReference1.Project>();
 
-        public FeedbackChatBox(ServiceReference1.User admin)
+        public FeedbackChatBox(ServiceReference1.User user)
         {
             InitializeComponent();
-            this.admin = admin;
+            this.userData = user;
 
             // Enable auto-scroll for the messagesContainerPanel
             messagesContainerPanel.AutoScroll = true;
@@ -28,7 +28,7 @@ namespace UI_DESIGNS
         private void LoadedProject()
         {
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-            ServiceReference1.Project[] projects = client.displayProject(admin);
+            ServiceReference1.Project[] projects = client.displayProject(userData);
             if (projectBindingSource != null)
             {
                 dataGridView1.DataSource = projects;
@@ -39,9 +39,9 @@ namespace UI_DESIGNS
         private void AppendMessage(string sender, string messageText)
         {
             // Create an instance of the Message user control
-            message messageControl = new message(sender == admin.Email,sender, messageText);
+            message messageControl = new message(sender == userData.Email,sender, messageText);
             // Adjust the alignment based on the sender's email
-            if (sender == admin.Email)
+            if (sender == userData.Email)
             {
                 messageControl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             }
@@ -59,11 +59,13 @@ namespace UI_DESIGNS
 
         private void LoadedChatData()
         {
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
             messagesContainerPanel.Controls.Clear();
             chat_name.Text = activeProject.Title;
-            for (int i = 0; i < 10; i++)
+            List<ServiceReference1.Feedback> feedbacks=client.getFeedbacks(userData,activeProject.Id).ToList();
+            foreach (var item in feedbacks)
             {
-                AppendMessage("amabr@gmail.com", "This is my message");
+                AppendMessage(item.SenderEmail, item.Message);
             }
         }
 
@@ -79,7 +81,7 @@ namespace UI_DESIGNS
                 int projectId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
                 activeProject = projectsData.FirstOrDefault(p => p.Id == projectId);
                 LoadedChatData();
-                MessageBox.Show("Project ID: " + projectId.ToString());
+                //MessageBox.Show("Project ID: " + projectId.ToString());
             }
         }
 
@@ -87,8 +89,27 @@ namespace UI_DESIGNS
         {
             if (SendingMessage_txtbx.Text.Length > 0)
             {
-                MessageBox.Show(activeProject.Id + SendingMessage_txtbx.Text + admin.Id);
-                AppendMessage(admin.Email, SendingMessage_txtbx.Text);
+                MessageBox.Show(activeProject.Id + SendingMessage_txtbx.Text + userData.Id);
+                ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                string res=client.addNewFeedback(userData, activeProject.Id, SendingMessage_txtbx.Text);
+                if (res.ToLower() != "yes")
+                {
+                    MessageBox.Show(res,"Error in sending Feedback",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+                else
+                {
+                AppendMessage(userData.Email, SendingMessage_txtbx.Text);
+                SendingMessage_txtbx.Text = string.Empty;
+
+                }
+            }
+        }
+
+        private void refresh_Chat_Click(object sender, EventArgs e)
+        {
+            if(activeProject != null)
+            {
+            LoadedChatData();
             }
         }
     }

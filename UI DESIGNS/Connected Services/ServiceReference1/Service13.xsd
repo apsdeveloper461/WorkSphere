@@ -36,6 +36,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Project" nillable="true" type="tns:Project" />
+  <xs:complexType name="ArrayOfFeedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Feedback" nillable="true" type="tns:Feedback" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFeedback" nillable="true" type="tns:ArrayOfFeedback" />
+  <xs:complexType name="Feedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+      <xs:element minOccurs="0" name="SenderEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderId" type="xs:int" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Feedback" nillable="true" type="tns:Feedback" />
   <xs:complexType name="CompositeType">
     <xs:sequence>
       <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />

@@ -62,6 +62,18 @@
   <wsdl:message name="IService1_projectOnWhichWork_OutputMessage">
     <wsdl:part name="parameters" element="tns:projectOnWhichWorkResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addNewFeedback_InputMessage">
+    <wsdl:part name="parameters" element="tns:addNewFeedback" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addNewFeedback_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addNewFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getFeedbacks_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFeedbacks" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getFeedbacks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFeedbacksResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -104,6 +116,14 @@
     <wsdl:operation name="projectOnWhichWork">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/projectOnWhichWork" message="tns:IService1_projectOnWhichWork_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/projectOnWhichWorkResponse" message="tns:IService1_projectOnWhichWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addNewFeedback">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addNewFeedback" message="tns:IService1_addNewFeedback_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addNewFeedbackResponse" message="tns:IService1_addNewFeedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFeedbacks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getFeedbacks" message="tns:IService1_getFeedbacks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getFeedbacksResponse" message="tns:IService1_getFeedbacks_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -186,6 +206,24 @@
     </wsdl:operation>
     <wsdl:operation name="projectOnWhichWork">
       <soap:operation soapAction="http://tempuri.org/IService1/projectOnWhichWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addNewFeedback">
+      <soap:operation soapAction="http://tempuri.org/IService1/addNewFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFeedbacks">
+      <soap:operation soapAction="http://tempuri.org/IService1/getFeedbacks" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

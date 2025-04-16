@@ -144,17 +144,48 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="addNewFeedback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="user" nillable="true" type="q13:User" />
+        <xs:element minOccurs="0" name="projectId" type="xs:int" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addNewFeedbackResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addNewFeedbackResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFeedbacks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="user" nillable="true" type="q14:User" />
+        <xs:element minOccurs="0" name="projectId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFeedbacksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="getFeedbacksResult" nillable="true" type="q15:ArrayOfFeedback" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="composite" nillable="true" type="q13:CompositeType" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="composite" nillable="true" type="q16:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q14:CompositeType" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q17:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

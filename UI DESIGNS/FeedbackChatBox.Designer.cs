@@ -30,17 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.messagesContainerPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chat_name = new System.Windows.Forms.Label();
-            this.SendingMessage_txtbx = new System.Windows.Forms.TextBox();
-            this.sendMessageButton = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.messagesContainerPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.refresh_Chat = new System.Windows.Forms.Button();
+            this.chat_name = new System.Windows.Forms.Label();
+            this.SendingMessage_txtbx = new System.Windows.Forms.TextBox();
+            this.sendMessageButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -62,6 +63,29 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 7;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 130;
+            // 
+            // title
+            // 
+            this.title.DataPropertyName = "Title";
+            this.title.HeaderText = "Title";
+            this.title.MinimumWidth = 7;
+            this.title.Name = "title";
+            this.title.ReadOnly = true;
+            this.title.Width = 130;
+            // 
+            // projectBindingSource
+            // 
+            this.projectBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.Project);
+            // 
             // messagesContainerPanel
             // 
             this.messagesContainerPanel.Location = new System.Drawing.Point(272, 55);
@@ -72,11 +96,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel1.Controls.Add(this.refresh_Chat);
             this.panel1.Controls.Add(this.chat_name);
             this.panel1.Location = new System.Drawing.Point(273, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(939, 51);
             this.panel1.TabIndex = 2;
+            // 
+            // refresh_Chat
+            // 
+            this.refresh_Chat.Location = new System.Drawing.Point(869, 0);
+            this.refresh_Chat.Name = "refresh_Chat";
+            this.refresh_Chat.Size = new System.Drawing.Size(72, 51);
+            this.refresh_Chat.TabIndex = 17;
+            this.refresh_Chat.Text = "Refresh";
+            this.refresh_Chat.UseVisualStyleBackColor = true;
+            this.refresh_Chat.Click += new System.EventHandler(this.refresh_Chat_Click);
             // 
             // chat_name
             // 
@@ -108,29 +143,6 @@
             this.sendMessageButton.UseVisualStyleBackColor = false;
             this.sendMessageButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Id";
-            this.id.MinimumWidth = 7;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 130;
-            // 
-            // title
-            // 
-            this.title.DataPropertyName = "Title";
-            this.title.HeaderText = "Title";
-            this.title.MinimumWidth = 7;
-            this.title.Name = "title";
-            this.title.ReadOnly = true;
-            this.title.Width = 130;
-            // 
-            // projectBindingSource
-            // 
-            this.projectBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.Project);
-            // 
             // FeedbackChatBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -144,9 +156,9 @@
             this.Size = new System.Drawing.Size(1217, 678);
             this.Load += new System.EventHandler(this.FeedbackChatBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +175,6 @@
         private System.Windows.Forms.Label chat_name;
         private System.Windows.Forms.TextBox SendingMessage_txtbx;
         private System.Windows.Forms.Button sendMessageButton;
+        private System.Windows.Forms.Button refresh_Chat;
     }
 }
