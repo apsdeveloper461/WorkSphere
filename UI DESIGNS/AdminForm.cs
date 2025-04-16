@@ -101,5 +101,10 @@ namespace UI_DESIGNS
                 this.Hide();
             }
         }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
