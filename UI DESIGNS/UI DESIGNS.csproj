@@ -81,6 +81,12 @@
     <Compile Include="deleteuser.Designer.cs">
       <DependentUpon>deleteuser.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeveloperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeveloperForm.Designer.cs">
+      <DependentUpon>DeveloperForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Feedback.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="message.Designer.cs">
       <DependentUpon>message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManagerForm.Designer.cs">
+      <DependentUpon>ProductManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="projects.cs">
@@ -152,6 +164,9 @@
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeveloperForm.resx">
+      <DependentUpon>DeveloperForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Feedback.resx">
       <DependentUpon>Feedback.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="message.resx">
       <DependentUpon>message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManagerForm.resx">
+      <DependentUpon>ProductManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="projects.resx">
       <DependentUpon>projects.cs</DependentUpon>

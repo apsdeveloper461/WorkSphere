@@ -44,16 +44,16 @@ namespace UI_DESIGNS
                         AdminForm adminDasboard = new AdminForm(result);
                         adminDasboard.Show();
                     }
-                    //else if (result.Role.ToLower() == "product manager" && result.ActivationStatus == true)
-                    //{
-                    //    ProductManagerDashbaord productManagerDashbaord = new ProductManagerDashbaord(result);
-                    //    productManagerDashbaord.Show();
-                    //}
-                    //else if (result.Role.ToLower() == "developer" && result.ActivationStatus == true)
-                    //{
-                    //    DeveloperDashboard developerDashboard = new DeveloperDashboard(result);
-                    //    developerDashboard.Show();
-                    //}
+                    else if (result.Role.ToLower() == "product manager" && result.ActivationStatus == true)
+                    {
+                        ProductManagerForm productManagerDashbaord = new ProductManagerForm(result);
+                        productManagerDashbaord.Show();
+                    }
+                    else if (result.Role.ToLower() == "developer" && result.ActivationStatus == true)
+                    {
+                        DeveloperForm developerDashboard = new DeveloperForm(result);
+                        developerDashboard.Show();
+                    }
                     else
                     {
                         MessageBox.Show("Wrong Credentials. Please try again to login WorkSphere", "Invalid Data", MessageBoxButtons.OK,MessageBoxIcon.Error);

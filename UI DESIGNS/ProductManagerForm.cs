@@ -10,16 +10,15 @@ using System.Windows.Forms;
 
 namespace UI_DESIGNS
 {
-    public partial class AdminForm : Form
+    public partial class ProductManagerForm : Form
     {
-        private ServiceReference1.User adminData;
-        public AdminForm(ServiceReference1.User adminData)
+        private ServiceReference1.User productManagerdata;
+        public ProductManagerForm(ServiceReference1.User productManagerdata)
         {
             InitializeComponent();
+            this.productManagerdata = productManagerdata;
             ShowDashboard();
-            this.adminData = adminData;
         }
-
         private void LoadForm(UserControl form)
         {
             panel1.Controls.Clear();
@@ -27,12 +26,15 @@ namespace UI_DESIGNS
             form.Dock = DockStyle.Fill;
             panel1.Controls.Add(form);
         }
+        private void ProductManagerForm_Load(object sender, EventArgs e)
+        {
 
+        }
         public void ShowDashboard()
         {
             panel1.Controls.Clear();
             Label lblWelcome = new Label();
-            lblWelcome.Text = "Welcome, Admin!";
+            lblWelcome.Text = "Welcome, " + productManagerdata.Name + " !";
             lblWelcome.Font = new Font("Arial", 24, FontStyle.Bold);
             lblWelcome.ForeColor = Color.MediumTurquoise;
             lblWelcome.AutoSize = true;
@@ -45,45 +47,9 @@ namespace UI_DESIGNS
             panel1.Controls.Add(lblWelcome);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ShowDashboard();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            LoadForm(new User(adminData));
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            LoadForm(new projects(adminData));
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            LoadForm(new Receipt());
-        }
-
         private void button11_Click(object sender, EventArgs e)
         {
-                LoadForm(new FeedbackChatBox(adminData));
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            LoadForm(new Finance());
+            LoadForm(new FeedbackChatBox(productManagerdata));
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -100,9 +66,9 @@ namespace UI_DESIGNS
             }
         }
 
-        private void AdminForm_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            ShowDashboard();
         }
     }
 }

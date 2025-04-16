@@ -29,7 +29,7 @@ namespace UI_DESIGNS
         {
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
             List<ServiceReference1.Project> projects=new List<ServiceReference1.Project>();
-            if(userData.Role == "Admin")
+            if(userData.Role == "admin")
             {
                 projects = client.displayProject(userData).ToList();
             }
@@ -95,6 +95,10 @@ namespace UI_DESIGNS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (activeProject == null)
+            {
+                return;
+            }
             if (SendingMessage_txtbx.Text.Length > 0)
             {
                 MessageBox.Show(activeProject.Id + SendingMessage_txtbx.Text + userData.Id);
