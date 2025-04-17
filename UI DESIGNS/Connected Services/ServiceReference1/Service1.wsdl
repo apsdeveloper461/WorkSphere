@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:56656/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:56656/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:56656/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WorkShere_Backend" />
+      <xsd:import schemaLocation="http://localhost:56656/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_login_InputMessage">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="IService1_login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addNewUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:addNewUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addNewUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addNewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_displayUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:displayUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_displayUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:displayUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addNewProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:addNewProject" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addNewProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addNewProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateProject" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_displayProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:displayProject" />
+  </wsdl:message>
+  <wsdl:message name="IService1_displayProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:displayProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_markProjectAsComplete_InputMessage">
+    <wsdl:part name="parameters" element="tns:markProjectAsComplete" />
+  </wsdl:message>
+  <wsdl:message name="IService1_markProjectAsComplete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:markProjectAsCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_projectOnWhichWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:projectOnWhichWork" />
+  </wsdl:message>
+  <wsdl:message name="IService1_projectOnWhichWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:projectOnWhichWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_projectCurrentlyOnWhichWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:projectCurrentlyOnWhichWork" />
+  </wsdl:message>
+  <wsdl:message name="IService1_projectCurrentlyOnWhichWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:projectCurrentlyOnWhichWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addNewFeedback_InputMessage">
+    <wsdl:part name="parameters" element="tns:addNewFeedback" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addNewFeedback_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addNewFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getFeedbacks_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFeedbacks" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getFeedbacks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFeedbacksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addTimeLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:addTimeLog" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addTimeLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addTimeLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getTimeLogsByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeLogsByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getTimeLogsByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeLogsByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getTimeLogsByProjectId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeLogsByProjectId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getTimeLogsByProjectId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeLogsByProjectIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateTimeLogStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateTimeLogStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateTimeLogStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateTimeLogStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updatePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:updatePassword" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updatePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/login" message="tns:IService1_login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/loginResponse" message="tns:IService1_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addNewUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addNewUser" message="tns:IService1_addNewUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addNewUserResponse" message="tns:IService1_addNewUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="displayUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/displayUsers" message="tns:IService1_displayUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/displayUsersResponse" message="tns:IService1_displayUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateUser" message="tns:IService1_updateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateUserResponse" message="tns:IService1_updateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addNewProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addNewProject" message="tns:IService1_addNewProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addNewProjectResponse" message="tns:IService1_addNewProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateProject" message="tns:IService1_updateProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateProjectResponse" message="tns:IService1_updateProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="displayProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/displayProject" message="tns:IService1_displayProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/displayProjectResponse" message="tns:IService1_displayProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="markProjectAsComplete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/markProjectAsComplete" message="tns:IService1_markProjectAsComplete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/markProjectAsCompleteResponse" message="tns:IService1_markProjectAsComplete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="projectOnWhichWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/projectOnWhichWork" message="tns:IService1_projectOnWhichWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/projectOnWhichWorkResponse" message="tns:IService1_projectOnWhichWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="projectCurrentlyOnWhichWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/projectCurrentlyOnWhichWork" message="tns:IService1_projectCurrentlyOnWhichWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/projectCurrentlyOnWhichWorkResponse" message="tns:IService1_projectCurrentlyOnWhichWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addNewFeedback">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addNewFeedback" message="tns:IService1_addNewFeedback_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addNewFeedbackResponse" message="tns:IService1_addNewFeedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFeedbacks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getFeedbacks" message="tns:IService1_getFeedbacks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getFeedbacksResponse" message="tns:IService1_getFeedbacks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addTimeLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addTimeLog" message="tns:IService1_addTimeLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addTimeLogResponse" message="tns:IService1_addTimeLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTimeLogsByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getTimeLogsByUserId" message="tns:IService1_getTimeLogsByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getTimeLogsByUserIdResponse" message="tns:IService1_getTimeLogsByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTimeLogsByProjectId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getTimeLogsByProjectId" message="tns:IService1_getTimeLogsByProjectId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getTimeLogsByProjectIdResponse" message="tns:IService1_getTimeLogsByProjectId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTimeLogStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateTimeLogStatus" message="tns:IService1_updateTimeLogStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateTimeLogStatusResponse" message="tns:IService1_updateTimeLogStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updatePassword" message="tns:IService1_updatePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updatePasswordResponse" message="tns:IService1_updatePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/IService1/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addNewUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/addNewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="displayUsers">
+      <soap:operation soapAction="http://tempuri.org/IService1/displayUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addNewProject">
+      <soap:operation soapAction="http://tempuri.org/IService1/addNewProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProject">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="displayProject">
+      <soap:operation soapAction="http://tempuri.org/IService1/displayProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="markProjectAsComplete">
+      <soap:operation soapAction="http://tempuri.org/IService1/markProjectAsComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="projectOnWhichWork">
+      <soap:operation soapAction="http://tempuri.org/IService1/projectOnWhichWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="projectCurrentlyOnWhichWork">
+      <soap:operation soapAction="http://tempuri.org/IService1/projectCurrentlyOnWhichWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addNewFeedback">
+      <soap:operation soapAction="http://tempuri.org/IService1/addNewFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFeedbacks">
+      <soap:operation soapAction="http://tempuri.org/IService1/getFeedbacks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTimeLog">
+      <soap:operation soapAction="http://tempuri.org/IService1/addTimeLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeLogsByUserId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getTimeLogsByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeLogsByProjectId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getTimeLogsByProjectId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTimeLogStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateTimeLogStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePassword">
+      <soap:operation soapAction="http://tempuri.org/IService1/updatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:56656/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
