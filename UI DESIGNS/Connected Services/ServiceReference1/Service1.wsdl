@@ -104,6 +104,12 @@
   <wsdl:message name="IService1_getTimeLogsByProjectId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getTimeLogsByProjectIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_updateTimeLogStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateTimeLogStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateTimeLogStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateTimeLogStatusResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -174,6 +180,10 @@
     <wsdl:operation name="getTimeLogsByProjectId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getTimeLogsByProjectId" message="tns:IService1_getTimeLogsByProjectId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getTimeLogsByProjectIdResponse" message="tns:IService1_getTimeLogsByProjectId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTimeLogStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateTimeLogStatus" message="tns:IService1_updateTimeLogStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateTimeLogStatusResponse" message="tns:IService1_updateTimeLogStatus_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -319,6 +329,15 @@
     </wsdl:operation>
     <wsdl:operation name="getTimeLogsByProjectId">
       <soap:operation soapAction="http://tempuri.org/IService1/getTimeLogsByProjectId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTimeLogStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateTimeLogStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

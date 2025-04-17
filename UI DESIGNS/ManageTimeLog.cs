@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI_DESIGNS.ServiceReference1;
 
 namespace UI_DESIGNS
 {
     public partial class ManageTimeLog : UserControl
     {
+        private int activeProject;
         private ServiceReference1.User productManager;
         public ManageTimeLog(ServiceReference1.User productManager)
         {
@@ -29,8 +31,10 @@ namespace UI_DESIGNS
             }
         }
 
-        private void LoadedTimeLogs(ServiceReference1.TimeLog[] timeLogs)
+        private void LoadedTimeLogs()
         {
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+            ServiceReference1.TimeLog[] timeLogs = client.getTimeLogsByProjectId(productManager, activeProject);
             List<ServiceReference1.TimeLog> pendingtimeLogList =new List<ServiceReference1.TimeLog>();
             List<ServiceReference1.TimeLog> OthertimeLogList = new List<ServiceReference1.TimeLog>();
             for (int i = 0; i < timeLogs.Length; i++)
@@ -93,9 +97,9 @@ namespace UI_DESIGNS
                 MessageBox.Show("Invalid project ID.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            ServiceReference1.TimeLog[] timeLogs = client.getTimeLogsByProjectId(productManager, projectId);
-            LoadedTimeLogs(timeLogs);
+            activeProject = projectId;
+            
+            LoadedTimeLogs();
 
         }
 
@@ -111,7 +115,11 @@ namespace UI_DESIGNS
                 {
                     // Perform the action to approve the time log
                     // You can add your logic here to update the status in the database
-                    MessageBox.Show("Time log approved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                    string res=client.updateTimeLogStatus(productManager, (int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value, "approved");
+
+                    MessageBox.Show(res, "Result of Approved Time Log", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadedTimeLogs();
                 }
             }
             else if(e.ColumnIndex == dataGridView1.Columns["reject"].Index)
@@ -124,7 +132,10 @@ namespace UI_DESIGNS
                 {
                     // Perform the action to reject the time log
                     // You can add your logic here to update the status in the database
-                    MessageBox.Show("Time log rejected successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                    string res = client.updateTimeLogStatus(productManager, (int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value, "reject");
+                    MessageBox.Show(res, "Result of Rejected Time Log", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadedTimeLogs();
                 }
 
             }

@@ -722,6 +722,12 @@ namespace UI_DESIGNS.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getTimeLogsByProjectId", ReplyAction="http://tempuri.org/IService1/getTimeLogsByProjectIdResponse")]
         System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.TimeLog[]> getTimeLogsByProjectIdAsync(UI_DESIGNS.ServiceReference1.User user, int projectid);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateTimeLogStatus", ReplyAction="http://tempuri.org/IService1/updateTimeLogStatusResponse")]
+        string updateTimeLogStatus(UI_DESIGNS.ServiceReference1.User user, int timeLogId, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateTimeLogStatus", ReplyAction="http://tempuri.org/IService1/updateTimeLogStatusResponse")]
+        System.Threading.Tasks.Task<string> updateTimeLogStatusAsync(UI_DESIGNS.ServiceReference1.User user, int timeLogId, string status);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite);
         
@@ -882,6 +888,14 @@ namespace UI_DESIGNS.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.TimeLog[]> getTimeLogsByProjectIdAsync(UI_DESIGNS.ServiceReference1.User user, int projectid) {
             return base.Channel.getTimeLogsByProjectIdAsync(user, projectid);
+        }
+        
+        public string updateTimeLogStatus(UI_DESIGNS.ServiceReference1.User user, int timeLogId, string status) {
+            return base.Channel.updateTimeLogStatus(user, timeLogId, status);
+        }
+        
+        public System.Threading.Tasks.Task<string> updateTimeLogStatusAsync(UI_DESIGNS.ServiceReference1.User user, int timeLogId, string status) {
+            return base.Channel.updateTimeLogStatusAsync(user, timeLogId, status);
         }
         
         public UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite) {
