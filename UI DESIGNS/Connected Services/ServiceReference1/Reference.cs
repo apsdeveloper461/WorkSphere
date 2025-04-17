@@ -563,6 +563,163 @@ namespace UI_DESIGNS.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Finance", Namespace="http://schemas.datacontract.org/2004/07/WorkShere_Backend")]
+    [System.SerializableAttribute()]
+    public partial class Finance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime created_dateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float hourly_rateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float management_costField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int project_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float total_cost_of_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float total_hoursField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime created_date {
+            get {
+                return this.created_dateField;
+            }
+            set {
+                if ((this.created_dateField.Equals(value) != true)) {
+                    this.created_dateField = value;
+                    this.RaisePropertyChanged("created_date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float hourly_rate {
+            get {
+                return this.hourly_rateField;
+            }
+            set {
+                if ((this.hourly_rateField.Equals(value) != true)) {
+                    this.hourly_rateField = value;
+                    this.RaisePropertyChanged("hourly_rate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float management_cost {
+            get {
+                return this.management_costField;
+            }
+            set {
+                if ((this.management_costField.Equals(value) != true)) {
+                    this.management_costField = value;
+                    this.RaisePropertyChanged("management_cost");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int project_id {
+            get {
+                return this.project_idField;
+            }
+            set {
+                if ((this.project_idField.Equals(value) != true)) {
+                    this.project_idField = value;
+                    this.RaisePropertyChanged("project_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float total_cost_of_project {
+            get {
+                return this.total_cost_of_projectField;
+            }
+            set {
+                if ((this.total_cost_of_projectField.Equals(value) != true)) {
+                    this.total_cost_of_projectField = value;
+                    this.RaisePropertyChanged("total_cost_of_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float total_hours {
+            get {
+                return this.total_hoursField;
+            }
+            set {
+                if ((this.total_hoursField.Equals(value) != true)) {
+                    this.total_hoursField = value;
+                    this.RaisePropertyChanged("total_hours");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WorkShere_Backend")]
     [System.SerializableAttribute()]
     public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -733,6 +890,18 @@ namespace UI_DESIGNS.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePassword", ReplyAction="http://tempuri.org/IService1/updatePasswordResponse")]
         System.Threading.Tasks.Task<string> updatePasswordAsync(UI_DESIGNS.ServiceReference1.User user, string newPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addFinance", ReplyAction="http://tempuri.org/IService1/addFinanceResponse")]
+        string addFinance(UI_DESIGNS.ServiceReference1.User user, int projectId, float hourlyRate, float managementCost);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addFinance", ReplyAction="http://tempuri.org/IService1/addFinanceResponse")]
+        System.Threading.Tasks.Task<string> addFinanceAsync(UI_DESIGNS.ServiceReference1.User user, int projectId, float hourlyRate, float managementCost);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getFinance", ReplyAction="http://tempuri.org/IService1/getFinanceResponse")]
+        UI_DESIGNS.ServiceReference1.Finance[] getFinance(UI_DESIGNS.ServiceReference1.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getFinance", ReplyAction="http://tempuri.org/IService1/getFinanceResponse")]
+        System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Finance[]> getFinanceAsync(UI_DESIGNS.ServiceReference1.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite);
@@ -910,6 +1079,22 @@ namespace UI_DESIGNS.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> updatePasswordAsync(UI_DESIGNS.ServiceReference1.User user, string newPassword) {
             return base.Channel.updatePasswordAsync(user, newPassword);
+        }
+        
+        public string addFinance(UI_DESIGNS.ServiceReference1.User user, int projectId, float hourlyRate, float managementCost) {
+            return base.Channel.addFinance(user, projectId, hourlyRate, managementCost);
+        }
+        
+        public System.Threading.Tasks.Task<string> addFinanceAsync(UI_DESIGNS.ServiceReference1.User user, int projectId, float hourlyRate, float managementCost) {
+            return base.Channel.addFinanceAsync(user, projectId, hourlyRate, managementCost);
+        }
+        
+        public UI_DESIGNS.ServiceReference1.Finance[] getFinance(UI_DESIGNS.ServiceReference1.User user) {
+            return base.Channel.getFinance(user);
+        }
+        
+        public System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.Finance[]> getFinanceAsync(UI_DESIGNS.ServiceReference1.User user) {
+            return base.Channel.getFinanceAsync(user);
         }
         
         public UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite) {

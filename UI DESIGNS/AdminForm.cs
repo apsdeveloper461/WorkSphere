@@ -73,7 +73,7 @@ namespace UI_DESIGNS
 
         private void button12_Click(object sender, EventArgs e)
         {
-            LoadForm(new Receipt());
+            LoadForm(new Recipt(adminData));
         }
 
         private void button11_Click(object sender, EventArgs e)

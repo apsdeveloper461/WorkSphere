@@ -71,6 +71,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TimeLog" nillable="true" type="tns:TimeLog" />
+  <xs:complexType name="ArrayOfFinance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Finance" nillable="true" type="tns:Finance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFinance" nillable="true" type="tns:ArrayOfFinance" />
+  <xs:complexType name="Finance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="created_date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="hourly_rate" type="xs:float" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="management_cost" type="xs:float" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="project_id" type="xs:int" />
+      <xs:element minOccurs="0" name="total_cost_of_project" type="xs:float" />
+      <xs:element minOccurs="0" name="total_hours" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Finance" nillable="true" type="tns:Finance" />
   <xs:complexType name="CompositeType">
     <xs:sequence>
       <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />

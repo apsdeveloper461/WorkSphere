@@ -285,17 +285,48 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="addFinance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="user" nillable="true" type="q26:User" />
+        <xs:element minOccurs="0" name="projectId" type="xs:int" />
+        <xs:element minOccurs="0" name="hourlyRate" type="xs:float" />
+        <xs:element minOccurs="0" name="managementCost" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addFinanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addFinanceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFinance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="user" nillable="true" type="q27:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFinanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="getFinanceResult" nillable="true" type="q28:ArrayOfFinance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="composite" nillable="true" type="q26:CompositeType" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="composite" nillable="true" type="q29:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q27:CompositeType" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WorkShere_Backend" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q30:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
