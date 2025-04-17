@@ -716,6 +716,12 @@ namespace UI_DESIGNS.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getTimeLogsByUserId", ReplyAction="http://tempuri.org/IService1/getTimeLogsByUserIdResponse")]
         System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.TimeLog[]> getTimeLogsByUserIdAsync(UI_DESIGNS.ServiceReference1.User user);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getTimeLogsByProjectId", ReplyAction="http://tempuri.org/IService1/getTimeLogsByProjectIdResponse")]
+        UI_DESIGNS.ServiceReference1.TimeLog[] getTimeLogsByProjectId(UI_DESIGNS.ServiceReference1.User user, int projectid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getTimeLogsByProjectId", ReplyAction="http://tempuri.org/IService1/getTimeLogsByProjectIdResponse")]
+        System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.TimeLog[]> getTimeLogsByProjectIdAsync(UI_DESIGNS.ServiceReference1.User user, int projectid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite);
         
@@ -868,6 +874,14 @@ namespace UI_DESIGNS.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.TimeLog[]> getTimeLogsByUserIdAsync(UI_DESIGNS.ServiceReference1.User user) {
             return base.Channel.getTimeLogsByUserIdAsync(user);
+        }
+        
+        public UI_DESIGNS.ServiceReference1.TimeLog[] getTimeLogsByProjectId(UI_DESIGNS.ServiceReference1.User user, int projectid) {
+            return base.Channel.getTimeLogsByProjectId(user, projectid);
+        }
+        
+        public System.Threading.Tasks.Task<UI_DESIGNS.ServiceReference1.TimeLog[]> getTimeLogsByProjectIdAsync(UI_DESIGNS.ServiceReference1.User user, int projectid) {
+            return base.Channel.getTimeLogsByProjectIdAsync(user, projectid);
         }
         
         public UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite) {

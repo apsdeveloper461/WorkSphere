@@ -8,8 +8,8 @@ namespace UI_DESIGNS
 {
     internal class TimeLogDisplay
     {
-     
-            public string status { get; set; }
+            public int Id { get; set; }
+        public string status { get; set; }
             public string ProjectName { get; set; }
             public float Hours { get; set; }
             public string Description { get; set; }

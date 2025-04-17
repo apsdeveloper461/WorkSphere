@@ -98,6 +98,12 @@
   <wsdl:message name="IService1_getTimeLogsByUserId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getTimeLogsByUserIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getTimeLogsByProjectId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeLogsByProjectId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getTimeLogsByProjectId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeLogsByProjectIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -164,6 +170,10 @@
     <wsdl:operation name="getTimeLogsByUserId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getTimeLogsByUserId" message="tns:IService1_getTimeLogsByUserId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getTimeLogsByUserIdResponse" message="tns:IService1_getTimeLogsByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTimeLogsByProjectId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getTimeLogsByProjectId" message="tns:IService1_getTimeLogsByProjectId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getTimeLogsByProjectIdResponse" message="tns:IService1_getTimeLogsByProjectId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -300,6 +310,15 @@
     </wsdl:operation>
     <wsdl:operation name="getTimeLogsByUserId">
       <soap:operation soapAction="http://tempuri.org/IService1/getTimeLogsByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeLogsByProjectId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getTimeLogsByProjectId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
