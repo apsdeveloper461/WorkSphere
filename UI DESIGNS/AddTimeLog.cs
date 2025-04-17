@@ -42,6 +42,7 @@ namespace UI_DESIGNS
 
             var timeLogDisplayList = timeLogs.Select(t => new TimeLogDisplay
             {
+                Id = t.Id,
                 status = t.Status,
                 ProjectName = t.Project.Title,
                 DeveloperEmail = t.Developer.Email,
@@ -49,7 +50,7 @@ namespace UI_DESIGNS
                 Description = t.Description,
                 Date = t.Date
             }).ToList();
-            if(s.StartsWith("all"))
+            if (s.StartsWith("all"))
             {
                 dataGridView1.DataSource = timeLogDisplayList;
             }
@@ -66,7 +67,7 @@ namespace UI_DESIGNS
                 dataGridView4.DataSource = timeLogDisplayList;
             }
         }
-        
+
         private void AddTimeLog_Load(object sender, EventArgs e)
         {
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
@@ -75,8 +76,8 @@ namespace UI_DESIGNS
             {
                 foreach (ServiceReference1.Project project in projects)
                 {
-                    comboBox1.Items.Add("("+project.Id+")"+project.Title);
-                    
+                    comboBox1.Items.Add("(" + project.Id + ")" + project.Title);
+
                 }
             }
             LoadedTimeLog("all");
@@ -128,7 +129,7 @@ namespace UI_DESIGNS
             }
             string description = description_txtbx.Text;
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-            string result= client.addTimeLog(developer, projectId,description, hours, "pending",selectedDate);
+            string result = client.addTimeLog(developer, projectId, description, hours, "pending", selectedDate);
             MessageBox.Show(result, "Time Log Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadedTimeLog("all");
             LoadedTimeLog("pending");
@@ -166,5 +167,34 @@ namespace UI_DESIGNS
             LoadedTimeLog("reject");
         }
 
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab != null)
+            {
+                string selectedTab = tabControl1.SelectedTab.Text;
+
+                if (selectedTab.ToLower() == "all")
+                {
+                    LoadedTimeLog("all");
+                }
+                else if (selectedTab.ToLower() == "pending")
+                {
+                    LoadedTimeLog("pending");
+                }
+                else if (selectedTab.ToLower() == "approved")
+                {
+                    LoadedTimeLog("approved");
+                }
+                else if (selectedTab.ToLower() == "reject")
+                {
+                    LoadedTimeLog("reject");
+                }
+            }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

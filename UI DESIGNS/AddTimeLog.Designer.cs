@@ -40,24 +40,24 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.all = new System.Windows.Forms.TabPage();
-            this.pending = new System.Windows.Forms.TabPage();
-            this.approved = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.timeLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reject = new System.Windows.Forms.TabPage();
+            this.pending = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.approved = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.reject = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.timeLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.all.SuspendLayout();
-            this.pending.SuspendLayout();
-            this.approved.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeLogBindingSource)).BeginInit();
-            this.reject.SuspendLayout();
+            this.pending.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.approved.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.reject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeLogBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -147,6 +147,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1187, 496);
             this.tabControl1.TabIndex = 9;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // all
@@ -159,28 +160,6 @@
             this.all.TabIndex = 0;
             this.all.Text = "All";
             this.all.UseVisualStyleBackColor = true;
-            // 
-            // pending
-            // 
-            this.pending.Controls.Add(this.dataGridView2);
-            this.pending.Location = new System.Drawing.Point(4, 25);
-            this.pending.Name = "pending";
-            this.pending.Padding = new System.Windows.Forms.Padding(3);
-            this.pending.Size = new System.Drawing.Size(1179, 467);
-            this.pending.TabIndex = 1;
-            this.pending.Text = "Pending";
-            this.pending.UseVisualStyleBackColor = true;
-            // 
-            // approved
-            // 
-            this.approved.Controls.Add(this.dataGridView3);
-            this.approved.Location = new System.Drawing.Point(4, 25);
-            this.approved.Name = "approved";
-            this.approved.Padding = new System.Windows.Forms.Padding(3);
-            this.approved.Size = new System.Drawing.Size(1179, 467);
-            this.approved.TabIndex = 2;
-            this.approved.Text = "Approved";
-            this.approved.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -196,20 +175,16 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // timeLogBindingSource
+            // pending
             // 
-            this.timeLogBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.TimeLog);
-            // 
-            // reject
-            // 
-            this.reject.Controls.Add(this.dataGridView4);
-            this.reject.Location = new System.Drawing.Point(4, 25);
-            this.reject.Name = "reject";
-            this.reject.Padding = new System.Windows.Forms.Padding(3);
-            this.reject.Size = new System.Drawing.Size(1179, 467);
-            this.reject.TabIndex = 3;
-            this.reject.Text = "Reject";
-            this.reject.UseVisualStyleBackColor = true;
+            this.pending.Controls.Add(this.dataGridView2);
+            this.pending.Location = new System.Drawing.Point(4, 25);
+            this.pending.Name = "pending";
+            this.pending.Padding = new System.Windows.Forms.Padding(3);
+            this.pending.Size = new System.Drawing.Size(1179, 467);
+            this.pending.TabIndex = 1;
+            this.pending.Text = "Pending";
+            this.pending.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -223,6 +198,18 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(1183, 532);
             this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // approved
+            // 
+            this.approved.Controls.Add(this.dataGridView3);
+            this.approved.Location = new System.Drawing.Point(4, 25);
+            this.approved.Name = "approved";
+            this.approved.Padding = new System.Windows.Forms.Padding(3);
+            this.approved.Size = new System.Drawing.Size(1179, 467);
+            this.approved.TabIndex = 2;
+            this.approved.Text = "Approved";
+            this.approved.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
@@ -237,6 +224,17 @@
             this.dataGridView3.Size = new System.Drawing.Size(1183, 532);
             this.dataGridView3.TabIndex = 1;
             // 
+            // reject
+            // 
+            this.reject.Controls.Add(this.dataGridView4);
+            this.reject.Location = new System.Drawing.Point(4, 25);
+            this.reject.Name = "reject";
+            this.reject.Padding = new System.Windows.Forms.Padding(3);
+            this.reject.Size = new System.Drawing.Size(1179, 467);
+            this.reject.TabIndex = 3;
+            this.reject.Text = "Reject";
+            this.reject.UseVisualStyleBackColor = true;
+            // 
             // dataGridView4
             // 
             this.dataGridView4.AllowUserToAddRows = false;
@@ -249,6 +247,10 @@
             this.dataGridView4.RowTemplate.Height = 24;
             this.dataGridView4.Size = new System.Drawing.Size(1183, 532);
             this.dataGridView4.TabIndex = 1;
+            // 
+            // timeLogBindingSource
+            // 
+            this.timeLogBindingSource.DataSource = typeof(UI_DESIGNS.ServiceReference1.TimeLog);
             // 
             // AddTimeLog
             // 
@@ -269,14 +271,14 @@
             this.Load += new System.EventHandler(this.AddTimeLog_Load);
             this.tabControl1.ResumeLayout(false);
             this.all.ResumeLayout(false);
-            this.pending.ResumeLayout(false);
-            this.approved.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeLogBindingSource)).EndInit();
-            this.reject.ResumeLayout(false);
+            this.pending.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.approved.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.reject.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeLogBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
