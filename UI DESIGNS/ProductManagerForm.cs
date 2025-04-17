@@ -75,5 +75,10 @@ namespace UI_DESIGNS
         {
             LoadForm(new ManageTimeLog(productManagerdata));
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LoadForm(new AssignedProject(productManagerdata));
+        }
     }
 }

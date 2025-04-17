@@ -76,6 +76,12 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AssignedProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AssignedProject.Designer.cs">
+      <DependentUpon>AssignedProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignedProject.resx">
+      <DependentUpon>AssignedProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeveloperForm.resx">
       <DependentUpon>DeveloperForm.cs</DependentUpon>
