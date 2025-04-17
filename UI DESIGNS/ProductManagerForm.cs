@@ -80,5 +80,10 @@ namespace UI_DESIGNS
         {
             LoadForm(new AssignedProject(productManagerdata));
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LoadForm(new UpdatePassword(productManagerdata));
+        }
     }
 }

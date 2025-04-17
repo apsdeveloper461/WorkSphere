@@ -728,6 +728,12 @@ namespace UI_DESIGNS.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateTimeLogStatus", ReplyAction="http://tempuri.org/IService1/updateTimeLogStatusResponse")]
         System.Threading.Tasks.Task<string> updateTimeLogStatusAsync(UI_DESIGNS.ServiceReference1.User user, int timeLogId, string status);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePassword", ReplyAction="http://tempuri.org/IService1/updatePasswordResponse")]
+        string updatePassword(UI_DESIGNS.ServiceReference1.User user, string newPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePassword", ReplyAction="http://tempuri.org/IService1/updatePasswordResponse")]
+        System.Threading.Tasks.Task<string> updatePasswordAsync(UI_DESIGNS.ServiceReference1.User user, string newPassword);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite);
         
@@ -896,6 +902,14 @@ namespace UI_DESIGNS.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> updateTimeLogStatusAsync(UI_DESIGNS.ServiceReference1.User user, int timeLogId, string status) {
             return base.Channel.updateTimeLogStatusAsync(user, timeLogId, status);
+        }
+        
+        public string updatePassword(UI_DESIGNS.ServiceReference1.User user, string newPassword) {
+            return base.Channel.updatePassword(user, newPassword);
+        }
+        
+        public System.Threading.Tasks.Task<string> updatePasswordAsync(UI_DESIGNS.ServiceReference1.User user, string newPassword) {
+            return base.Channel.updatePasswordAsync(user, newPassword);
         }
         
         public UI_DESIGNS.ServiceReference1.CompositeType GetDataUsingDataContract(UI_DESIGNS.ServiceReference1.CompositeType composite) {

@@ -156,6 +156,12 @@
       <DependentUpon>Receipt.cs</DependentUpon>
     </Compile>
     <Compile Include="TimeLogDisplay.cs" />
+    <Compile Include="UpdatePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdatePassword.Designer.cs">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="updateProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UpdatePassword.resx">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="updateProject.resx">
       <DependentUpon>updateProject.cs</DependentUpon>
     </EmbeddedResource>
