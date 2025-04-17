@@ -16,7 +16,8 @@ namespace UI_DESIGNS
         public AdminForm(ServiceReference1.User adminData)
         {
             InitializeComponent();
-            ShowDashboard();
+            //ShowDashboard();
+            LoadForm(new MonitorProgress(adminData));
             this.adminData = adminData;
         }
 
@@ -28,26 +29,27 @@ namespace UI_DESIGNS
             panel1.Controls.Add(form);
         }
 
-        public void ShowDashboard()
-        {
-            panel1.Controls.Clear();
-            Label lblWelcome = new Label();
-            lblWelcome.Text = "Welcome, Admin!";
-            lblWelcome.Font = new Font("Arial", 24, FontStyle.Bold);
-            lblWelcome.ForeColor = Color.MediumTurquoise;
-            lblWelcome.AutoSize = true;
+        //public void ShowDashboard()
+        //{
+        //    panel1.Controls.Clear();
+        //    Label lblWelcome = new Label();
+        //    lblWelcome.Text = "Welcome, Admin!";
+        //    lblWelcome.Font = new Font("Arial", 24, FontStyle.Bold);
+        //    lblWelcome.ForeColor = Color.MediumTurquoise;
+        //    lblWelcome.AutoSize = true;
 
-            lblWelcome.Location = new Point(
-                (panel1.Width - lblWelcome.PreferredWidth) / 2,
-                panel1.Height / 10
-            );
+        //    lblWelcome.Location = new Point(
+        //        (panel1.Width - lblWelcome.PreferredWidth) / 2,
+        //        panel1.Height / 10
+        //    );
 
-            panel1.Controls.Add(lblWelcome);
-        }
+        //    panel1.Controls.Add(lblWelcome);
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ShowDashboard();
+            //ShowDashboard();
+            LoadForm(new MonitorProgress(adminData));
         }
 
         private void button2_Click(object sender, EventArgs e)

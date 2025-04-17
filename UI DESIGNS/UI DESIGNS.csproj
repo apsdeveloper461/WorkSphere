@@ -135,6 +135,12 @@
     <Compile Include="message.Designer.cs">
       <DependentUpon>message.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonitorProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MonitorProgress.Designer.cs">
+      <DependentUpon>MonitorProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="message.resx">
       <DependentUpon>message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitorProgress.resx">
+      <DependentUpon>MonitorProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductManagerForm.resx">
       <DependentUpon>ProductManagerForm.cs</DependentUpon>

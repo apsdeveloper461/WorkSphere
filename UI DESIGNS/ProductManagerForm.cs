@@ -17,7 +17,8 @@ namespace UI_DESIGNS
         {
             InitializeComponent();
             this.productManagerdata = productManagerdata;
-            ShowDashboard();
+            //ShowDashboard();
+            LoadForm(new MonitorProgress(productManagerdata));
         }
         private void LoadForm(UserControl form)
         {
@@ -68,7 +69,8 @@ namespace UI_DESIGNS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ShowDashboard();
+            //ShowDashboard();
+            LoadForm(new MonitorProgress(productManagerdata));  
         }
 
         private void button2_Click(object sender, EventArgs e)

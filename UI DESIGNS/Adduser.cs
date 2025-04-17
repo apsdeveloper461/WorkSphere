@@ -37,7 +37,7 @@ namespace UI_DESIGNS
             if (this.Owner is AdminForm adminForm) 
             {
                 adminForm.Show(); 
-                adminForm.ShowDashboard(); 
+                //adminForm.ShowDashboard(); 
             }
         }
 
