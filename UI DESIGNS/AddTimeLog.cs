@@ -133,8 +133,12 @@ namespace UI_DESIGNS
             MessageBox.Show(result, "Time Log Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadedTimeLog("all");
             LoadedTimeLog("pending");
+            description_txtbx.Clear();
+            hours_txtbx.Clear();
+            comboBox1.SelectedIndex = -1;
+            date_picker.Value = DateTime.Now; // Reset the date picker to the current date
             // Example action: Display a message box with the entered information
-            MessageBox.Show($"Project: {selectedProject}\nTime Spent: {hours}\nDescription: {selectedDate}", "Time Log Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show($"Project: {selectedProject}\nTime Spent: {hours}\nDescription: {selectedDate}", "Time Log Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // You can replace the above message box with the actual logic to save the time log
         }
