@@ -37,7 +37,7 @@ namespace UI_DESIGNS
             }
             else if (s.ToLower() == "reject")
             {
-                timeLogs = timeLogs.Where(t => t.Status.ToLower() == "rejected").ToArray();
+                timeLogs = timeLogs.Where(t => t.Status.ToLower() == "reject").ToArray();
             }
 
             var timeLogDisplayList = timeLogs.Select(t => new TimeLogDisplay
