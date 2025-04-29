@@ -125,5 +125,10 @@ namespace UI_DESIGNS
             LoadedChatData();
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
